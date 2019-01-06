@@ -70,19 +70,19 @@ print "<form class='layui-form' action=''>"
 print "  <div class='layui-form-item'>"
 print "    <label class='layui-form-label'>输入原密码</label>"
 print "    <div class='layui-input-block'>"
-print "      <input type='text' name='source' id='source' lay-verify='required' autocomplete='off' placeholder='请输入标题' class='layui-input'>"
+print "      <input type='text' name='source' id='source' lay-verify='required' autocomplete='off' placeholder='请输入原密码' class='layui-input'>"
 print "    </div>"
 print "  </div>"
 print "  <div class='layui-form-item'>"
 print "    <label class='layui-form-label'>输入新密码</label>"
 print "    <div class='layui-input-block'>"
-print "      <input type='password' name='thenew' id='new' lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input'>"
+print "      <input type='password' name='thenew' id='new' lay-verify='required' placeholder='请输入新密码' autocomplete='off' class='layui-input'>"
 print "    </div>"
 print "  </div>"
 print "<div class='layui-form-item'>"
 print "    <label class='layui-form-label'>确认新密码</label>"
 print "    <div class='layui-input-block'>"
-print "      <input type='password' name='renew' id='renew' lay-verify='required' placeholder='请输入' autocomplete='off' class='layui-input'>"
+print "      <input type='password' name='renew' id='renew' lay-verify='required' placeholder='确认新密码' autocomplete='off' class='layui-input'>"
 print "    </div>"
 print "  </div>"
   
@@ -105,7 +105,7 @@ print "</form>"
       
 print "  </div>"
 
-print "<p>说明<p>"
+
  
 print "    </div>"
 

@@ -198,7 +198,8 @@ print  "        <button class='layui-btn' id='examined'>已审批的工时</butt
 print  "        <button class='layui-btn' id='unexamined'>未审批的工时</button>"
 print  "      </div>"
 print  "      <p>审批说明<p>"
- 
+print  "      <p>1.在您审批通过或拒绝后会有一段时间的延迟，请不要刷新，在发邮件</p>"
+print  "	<p>2.如果数据没有加载出来，请尝试刷新页面<p>"
 print  "    </div>"
 print  "  </div>"
   
@@ -254,4 +255,4 @@ print "</form>"
 print  "<script src='../DataTableExtend.js'></script>"
 print  "<script src='../layui/layui.js '></script>"
 print  "<script src='../jquery-3.2.1.js'></script>"
-print  "<script src='../js/waitforme4.js'></script>"
+print  "<script src='../js/waitforme1.js'></script>"
