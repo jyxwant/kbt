@@ -118,7 +118,6 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       var req = new XMLHttpRequest();
       req.open("GET","./rejectmydata.py?businesscode="+data.businesscode+"&businessman="+data.businessman+"&username="+username+"&mondaytime="+mondaytime,false);
       req.send(null);
-      res = req.responseText;
       layer.close(index);
       location.reload();
       }) 
@@ -143,8 +142,6 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       var total = parseInt(obj.data.Monday) + parseInt(obj.data.Tuesday) + parseInt(obj.data.Wednesday) + parseInt(obj.data.Thursday) + parseInt(obj.data.Friday) 
       req.open("GET","./agreemydata.py?businesscode="+data.businesscode+"&businessman="+data.businessman+"&username="+username+"&mondaytime="+mondaytime+"&total="+total+"&businessname="+obj.data.businessname+"&nonedone="+nonedone+"&workertime="+workertime+"&starttime="+starttime+"&endtime="+endtime+"&should="+should+"&status="+status,false);
       req.send(null);
-      res = req.responseText;
-      console.log(res)
       layer.close(index);
       location.reload();
       }) 
