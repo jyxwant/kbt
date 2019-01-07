@@ -25,7 +25,9 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "  <meta charset='utf-8'>"
 	print "  <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1'>"
 	print "  <title>项目工时管理系统</title>"
-	print "  <link rel='stylesheet' href='../layui/css/layui.css'>"
+	print "  <link rel='stylesheet' href='../layui/css/layui.css'>"	
+	print "  <link rel='stylesheet' href='../css/mycss.css'>"
+
 	print "</head>"
 	print "<body class='layui-layout-body'>"
 	print "<form method='post' action='admin1.py' style='display:none;'>"
@@ -38,7 +40,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "   <!-- 头部区域（可配合layui已有的水平导航） -->"
 	print "    <ul class='layui-nav layui-layout-left'>"
 	print "      <li class='layui-nav-item '><a href='#' onclick='worker()'>管理用户</a></li>"
-	print "      <li class='layui-nav-item layui-this' ><a href='#'>管理项目</a></li>"
+	print "      <li class='layui-nav-item layui-this' ><a href='#' onclick='location.reload();'>管理项目</a></li>"
 	print "    </ul>"
 	print "    <ul class='layui-nav layui-layout-right'>"
 	print "      <li class='layui-nav-item'><a href=''>admin</a></li><!--python-->"
@@ -61,9 +63,9 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "    <!-- 内容主体区域 -->"
 	print "    <div style='padding: 8px;'> "
 	print "<div class='layui-row' style='padding:0px;'>"
-	print "    <div class='layui-col-md12'>"
+	print "    <div class='layui-col-md12' style='margin-bottom:40px'>"
 	print "              <table class='layui-table'>"
-	print "<table id='demo' lay-filter='test'></table>"
+	print "<table id='demo' lay-filter='test' ></table>"
 	print "<script type='text/html' id='barDemo'>"
 	print "    <a class='layui-btn layui-btn-xs' lay-event='edit'>编辑</a>"
   
@@ -72,9 +74,7 @@ if site_name == "admin" and site_url == "cobot#2018":
       
 	print "  </div>"
 	print "</form>"
-
-
-	print "<div class='layui-row' style='padding: 10px;'>"
+	print "<div class='layui-row' style='padding-top: 100px;'>"
 	print "	<button class='layui-btn' id='addRow' >添加项目</button>"
 	print "<button class='layui-btn' id='people' onclick='businesscsv()'>按项目维度导出</button>"
 	print "<button class='layui-btn' id='business' onclick='workercsv()'>按人员维度导出</button>"
@@ -96,7 +96,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "<script src='../jquery-3.2.1.js'></script>"
 
 
-	print "<script src = '../js/admin22.js'></script>"
+	print "<script src = '../js/admin23.js'></script>"
 	print "</body>"
 	print "</html>"
 

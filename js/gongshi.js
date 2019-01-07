@@ -1,4 +1,7 @@
 //JavaScript代码区域
+$(window).resize(function () {
+location.reload();
+})
 function wait(){
 	document.getElementById("waitforme").click();
 }
@@ -143,7 +146,7 @@ window.onload=function (){//页面加载时根据本周的起始时间传入数�
 }
 
         
-setTimeout('refresh()', 1000);
+
 
 }
 
@@ -169,9 +172,11 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
         var layer = layui.layer;
         var form = layui.form;
   	//第一个实例
+	 var _window = $(window).height();
+	myheight = _window - 450
    	var tableIns =table.render({
     		elem: '#demo'
-    		,height: 600
+    		,height: myheight
     		,data : mydata 
     		,page: false
     		,limit:30
@@ -322,9 +327,10 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 		
 
         });
-
+	 var _window = $(window).height();
+	myheight = _window - 350
   	table.on('edit(test)', function(obj){
-		tableIns.reload({height: 600
+		tableIns.reload({height: myheight
     		,data : mydata 
     		,page: false
     		,limit:30

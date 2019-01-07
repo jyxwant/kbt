@@ -11,7 +11,7 @@ margin:0px;
 a{color:White}
 body{
 font-family:Arial, Helvetica, sans-serif;
-background:url(images/2.jpg) no-repeat center;
+background:url(images/4.jpg) no-repeat center;
 font-size:13px; 
 background-repeat:no-repeat;
 background-size:100% 100%; 
@@ -20,7 +20,7 @@ background-attachment: fixed;
 img{
 border:0;
 }
-.lg{width:468px; height:468px; margin:100px auto; background:url(images/login_bg2.png) no-repeat;}
+.lg{width:468px; height:468px; margin:100px auto; background:url(images/login_bg3.png) no-repeat;}
 .lg_top{ height:200px; width:468px;}
 .lg_main{width:400px; height:180px; margin:0 25px;}
 .lg_m_1{
@@ -50,31 +50,45 @@ padding-left:10px;
 font-size:16pt;
 font-family:Arial, Helvetica, sans-serif;
 }
-.bn{width:330px; height:72px; background:url(images/enter2.png) no-repeat; border:0; display:block; font-size:18px; color:#FFF; font-family:Arial, Helvetica, sans-serif; font-weight:bolder;}
+.bn{width:100%; height:40px;  background-color:#0b2457;border:0; display:block; font-size:18px; color:#FFF; font-family:Arial, Helvetica, sans-serif; font-weight:bolder;}
 .lg_foot{
 height:80px;
 width:330px;
 padding: 6px 68px 0 68px;
 color:#ffcb00;
 }
+
+     .center-in-center{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+        }
+
 </style>
 </head>
 
 <body class="b">
-<div class="lg">
+<div class = "center-in-center">
 <form method="post" action="cgi-bin/middle.py">
-<div class="lg_top"></div>
-<div class="lg_main">
+
+<div class="lg_main " >
 <div class="lg_m_1">
-	<input name="username" placeholder="username" class="ur" /><!--need change-->
-	<input name="pwd" type="password" placeholder="password" class="pw" />
+	<input name="username" placeholder="用户名" class="ur" /><!--need change-->
+	<input name="pwd" type="password" placeholder="密码" class="pw" />
 </div>
 </div>
 <div class="lg_foot">
-<input type="submit" value="登录" name = "submit" class="bn"  /></div>
+<center><input type="submit" value="登录" name = "submit" class="bn"  /></center>
+</div>
+
 </form>
 </div>
-<div style="text-align:center;">
-</div>
 </body>
+
 </html>
+

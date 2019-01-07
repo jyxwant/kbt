@@ -42,7 +42,7 @@ print "   <!-- 头部区域（可配合layui已有的水平导航） -->"
 print "    <ul class='layui-nav layui-layout-left'>"
 print "      <li class='layui-nav-item '><a href='#' onclick = 'kbt()'>工时填写</a></li>"
 print "      <li class='layui-nav-item'><a href='#' onclick = 'waitforme()'>待我审批的工时</a></li>"
-print "      <li class='layui-nav-item layui-this'><a href='#'>修改密码</a></li> "
+print "      <li class='layui-nav-item layui-this'><a href='#' onclick='location.reload();'>修改密码</a></li> "
 print "    </ul>"
 print "    <ul class='layui-nav layui-layout-right'>"
 print "      <li class='layui-nav-item'><a href='#'>%s</a></li><!--python-->"%(site_email)

@@ -1,4 +1,6 @@
-
+$(window).resize(function () {
+location.reload();
+})
 var mydata //= [{"businesscode":"CGFras","businessname":"xx","ratio":"100/200","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"审批通过"},{"businesscode":"C1","businessname":"xx","ratio":"100/200","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"审批拒绝"},{"businesscode":"C2","businessname":"xx","ratio":"50/100","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"审批通过"},{"businesscode":"C3","businessname":"xx","ratio":"60/200","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"未审批"},{"businesscode":"C4","businessname":"xx","ratio":"100/200","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"未审批"}];
 
 var mydata
@@ -33,11 +35,12 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
   var $ = layui.jquery;
   var layer = layui.layer;
   var form = layui.form;
-
+   var _window = $(window).height();
+	myheight = _window - 350
 
   var tableIns =table.render({
     elem: '#demo'
-    ,height: 600
+    ,height: myheight
     ,data : mydata 
     ,page: false
     ,limit:30
@@ -148,10 +151,11 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
     };
   }) 
   $('#all').click(function () {
-    examineddata = 
+     var _window = $(window).height();
+	myheight = _window - 350
     table.reload(
       "demo", {    elem: '#demo'
-      ,height: 600
+      ,height: myheight
       ,data : mydata 
       ,page: false
       ,limit:30
@@ -173,9 +177,11 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
   });
   $('#examined').click(function () {
     document.getElementById("unexamined").click();
+ var _window = $(window).height();
+	myheight = _window - 350
     table.reload(
       "demo", {    elem: '#demo'
-      ,height: 600
+      ,height: myheight
       ,data : examineddata
       ,page: false
       ,limit:30
@@ -197,9 +203,11 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
     )
   })
   $('#unexamined').click(function () {
+	 var _window = $(window).height();
+	myheight = _window - 350
     table.reload(
       "demo", {    elem: '#demo'
-      ,height: 600
+      ,height: myheight
       ,data : unexamineddata
       ,page: false
       ,limit:30

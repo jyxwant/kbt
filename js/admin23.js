@@ -3,6 +3,9 @@ layui.use('element', function(){
   var element = layui.element;
   
 });
+$(window).resize(function () {
+location.reload();
+})
 
 
 
@@ -178,7 +181,8 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 var $ = layui.jquery;
         var layer = layui.layer;
         var form = layui.form;
-
+	 var _window = $(window).height();
+	myheight = _window - 350
   layui.$.support.cors = true; //允许ajax跨域
   //第一个实例
 form.on('select(testSelect)', function (data) {
@@ -192,7 +196,7 @@ form.on('select(testSelect)', function (data) {
         });
    var tableIns =table.render({
     elem: '#demo'
-    ,height: 600
+    ,height: myheight
     ,data : mydata 
     ,page: false
     ,limit:30

@@ -1,0 +1,10 @@
+  .layui-table-cell {
+    height: auto; 
+    line-height: 28px;
+    padding: 0 15px;
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    box-sizing: border-box;
+  }

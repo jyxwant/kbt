@@ -3,6 +3,9 @@ layui.use('element', function(){
   var element = layui.element;
   
 });
+$(window).resize(function () {
+location.reload();
+})
 
 layui.use('form', function(){
   var form = layui.form;
@@ -116,9 +119,12 @@ form.on('select(testSelect)', function (data) {
             tableData[trElem.data('index')][elem.attr('name')] = data.value;
             // 其他的操作看需求 TODO
         });
+ var _window = $(window).height();
+myheight = _window - 350
+  layui.$.support.cors = true; //允许ajax跨域
    var tableIns =table.render({
     elem: '#demo'
-    ,height: 600
+    ,height: myheight
     ,data : mydata 
     ,page: false
     ,limit:30
@@ -126,7 +132,7 @@ form.on('select(testSelect)', function (data) {
 
     ,cols: [[ //表头
 
-    {field: 'emailname', title: '用户名（邮箱）'}
+    {field: 'emailname', title: '用户名\n（邮箱）'}
       ,{field: 'password', title: '登录密码'}
       ,{field: 'Name', title: '姓名', totalRow: true,templet: '#Name'} 
       ,{fixed: 'right', width: 165, align:'center', toolbar: '#barDemo'}
@@ -243,16 +249,18 @@ form.on('submit(addsubmit)', function() {
 var tableObj = tableIns;
             var config = tableObj.config;
            var dataBak = [];   //定义一个空数组,用来存储之前编辑过的数据已经存放新数据
-
+ var _window = $(window).height();
+myheight = _window - 350
+  layui.$.support.cors = true; //允许ajax跨域
 
 table.reload("demo", {
                 
     elem: '#demo'
-    ,height: 600
+    ,height: myheight
     ,data : dataBak 
     ,page: false
     ,cols: [[ //表头
-     {field: 'emailname', title: '用户名&nbsp;（邮箱）'}
+     {field: 'emailname', title: '用户名\n&nbsp;（邮箱）'}
       ,{field: 'password', title: '登录密码'}
       ,{field: 'Name', title: '用户姓名'} 
     ]]
