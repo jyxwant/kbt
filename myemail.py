@@ -29,7 +29,7 @@ def mail():
 		print "3"
 		msg['Subject']="请注意提交和审批工时" #邮件的主题，也可以说是标题
 		print "4"
-		server=smtplib.SMTP("smtp.163.com",25)  #发件人邮箱中的SMTP服务器，端口是25
+		server=smtplib.SMTP_SSL("smtp.163.com",465)  #发件人邮箱中的SMTP服务器，端口是25
 		print "5"
 		server.login(my_sender,"cobot2019")    #括号中对应的是发件人邮箱账号、邮箱密码
 		print "6"
