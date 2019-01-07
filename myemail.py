@@ -22,130 +22,25 @@ def mail():
 	ret=True
 	try:
 		msg=MIMEText("coboter您好：注意提交和审批工时^_^",'plain','utf-8')
+		print "1"
 		msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
+		print "2"
 		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
+		print "3"
 		msg['Subject']="请注意提交和审批工时" #邮件的主题，也可以说是标题
+		print "4"
 		server=smtplib.SMTP("smtp.163.com",25)  #发件人邮箱中的SMTP服务器，端口是25
+		print "5"
 		server.login(my_sender,"cobot2019")    #括号中对应的是发件人邮箱账号、邮箱密码
+		print "6"
 		server.sendmail(my_sender,[my_user,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
+		print "7"
 		server.quit()   #这句是关闭连接的意思
 	except Exception:   #如果try中的语句没有执行，则会执行下面的ret=False
 		ret=False
 	return ret
 
-def mail1():
-	ret=True
-	print "mail1"
-	try:
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天",'plain','utf-8')
-		msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
-		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
-		msg['Subject']=thebusiness + "项目工时还未满足要求" #邮件的主题，也可以说是标题
-		server=smtplib.SMTP("smtp.163.com",25)  #发件人邮箱中的SMTP服务器，端口是25
-		server.login(my_sender,"cobot2019")    #括号中对应的是发件人邮箱账号、邮箱密码
-		server.sendmail(my_sender,[my_user,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
-		server.quit()   #这句是关闭连接的意思
-	except Exception:   #如果try中的语句没有执行，则会执行下面的ret=False
-		ret=False
-	print ret
-	return ret
 
-def mail1():
-	ret=True
-	print "mail1"
-	try:
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天",'plain','utf-8')
-		msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
-		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
-		msg['Subject']=thebusiness + "项目工时还未满足要求" #邮件的主题，也可以说是标题
-		server=smtplib.SMTP("smtp.163.com",25)  #发件人邮箱中的SMTP服务器，端口是25
-		server.login(my_sender,"cobot2019")    #括号中对应的是发件人邮箱账号、邮箱密码
-		server.sendmail(my_sender,[my_user,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
-		server.quit()   #这句是关闭连接的意思
-	except Exception:   #如果try中的语句没有执行，则会执行下面的ret=False
-		ret=False
-	print ret
-	return ret
-
-
-
-#额外收到邮件的人
-def mail2():
-	ret=True
-	print "mail1"
-	try:
-		my_user = ""   #####!!!!!!!!改这里
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天",'plain','utf-8')
-		msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
-		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
-		msg['Subject']=thebusiness + "项目工时还未满足要求" #邮件的主题，也可以说是标题
-		server=smtplib.SMTP("smtp.163.com",25)  #发件人邮箱中的SMTP服务器，端口是25
-		server.login(my_sender,"cobot2019")    #括号中对应的是发件人邮箱账号、邮箱密码
-		server.sendmail(my_sender,[my_user,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
-		server.quit()   #这句是关闭连接的意思
-	except Exception:   #如果try中的语句没有执行，则会执行下面的ret=False
-		ret=False
-	print ret
-	return ret
-
-#额外收到邮件的人
-def mail3():
-	ret=True
-	print "mail1"
-	try:######  ########
-		my_user = ""   #####!!!!!!!!改这里
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天",'plain','utf-8')
-		msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
-		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
-		msg['Subject']=thebusiness + "项目工时还未满足要求" #邮件的主题，也可以说是标题
-		server=smtplib.SMTP("smtp.163.com",25)  #发件人邮箱中的SMTP服务器，端口是25
-		server.login(my_sender,"cobot2019")    #括号中对应的是发件人邮箱账号、邮箱密码
-		server.sendmail(my_sender,[my_user,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
-		server.quit()   #这句是关闭连接的意思
-	except Exception:   #如果try中的语句没有执行，则会执行下面的ret=False
-		ret=False
-	print ret
-	return ret
-
-
-#额外收到邮件的人
-def mail4():
-	ret=True
-	print "mail1"
-	try:
-		my_user = ""   #####!!!!!!!!改这里
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天",'plain','utf-8')
-		msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
-		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
-		msg['Subject']=thebusiness + "项目工时还未满足要求" #邮件的主题，也可以说是标题
-		server=smtplib.SMTP("smtp.163.com",25)  #发件人邮箱中的SMTP服务器，端口是25
-		server.login(my_sender,"cobot2019")    #括号中对应的是发件人邮箱账号、邮箱密码
-		server.sendmail(my_sender,[my_user,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
-		server.quit()   #这句是关闭连接的意思
-	except Exception:   #如果try中的语句没有执行，则会执行下面的ret=False
-		ret=False
-	print ret
-	return ret
-
-
-#额外收到邮件的人
-def mail5():
-	ret=True
-	print "mail1"
-	try:
-		my_user = ""   #####!!!!!!!!改这里
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天",'plain','utf-8')
-		msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
-		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
-		msg['Subject']=thebusiness + "项目工时还未满足要求" #邮件的主题，也可以说是标题
-		server=smtplib.SMTP("smtp.163.com",25)  #发件人邮箱中的SMTP服务器，端口是25
-		server.login(my_sender,"cobot2019")    #括号中对应的是发件人邮箱账号、邮箱密码
-		server.sendmail(my_sender,[my_user,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
-		server.quit()   #这句是关闭连接的意思
-	except Exception:   #如果try中的语句没有执行，则会执行下面的ret=False
-		ret=False
-	print ret
-	return ret
 
 
 """
@@ -157,7 +52,7 @@ while (True):
 		break
 """
 my_sender='cobotsys2019@163.com'
-my_user = '1132346005@qq.com'
+my_user = 'j1132346005@163.com'
 mail()
 
 
