@@ -35,9 +35,10 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
   var $ = layui.jquery;
   var layer = layui.layer;
   var form = layui.form;
+  var index = layer.load(1);
    var _window = $(window).height();
-	myheight = _window - 350
-
+	myheight = _window * 0.6
+   ifreload = 1
   var tableIns =table.render({
     elem: '#demo'
     ,height: myheight
@@ -58,6 +59,8 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
     ]]
     ,done: function (res, curr, count) {// 表格渲染完成之后的回调
+        ifreload = 0
+	layer.close(index);
         examineddata = mydata.filter(function (e) { return e.Judge != "未审批"; });
         unexamineddata = mydata.filter(function (e) { return e.Judge == "未审批"; });
         for (var i in res.data) {
@@ -92,7 +95,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
         })
     }
   });
-
+  setTimeout("if(ifreload==1){location.reload();}",2000)
   form.on('select(choseweek)', function(data){
 	if(data.value == 0){
 	document.getElementById("waitforme1").click();

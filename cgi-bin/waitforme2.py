@@ -86,7 +86,7 @@ print "</form>"
 
 print  "  <div class='layui-header'>   "
 print  "   <!-- 头部区域（可配合layui已有的水平导航） -->"
-print  "    <ul class='layui-nav layui-layout-left'>"
+print  "    <ul class='layui-nav'>"
 print  "      <li class='layui-nav-item '><a href='#' onclick = 'kbt()'>工时填写</a></li>"
 print  "      <li class='layui-nav-item layui-this'><a href='#' onclick='location.reload();'>待我审批的工时</a></li>"
 print  "      <li class='layui-nav-item'><a href='#' onclick='changepassword()'>修改密码</a></li> "
@@ -98,33 +98,10 @@ print  "  </div>"
 
 
 
-
-
-print  "  <div class='layui-side layui-bg-black'>"
-print  "    <div class='layui-side-scroll'>"
-print  "      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->"
-print  "      <ul class='layui-nav layui-nav-tree'  lay-filter='test'>"
-print  "        <li class='layui-nav-item layui-nav-itemed'>"
-print  "          <a class='' href='javascript:;'>待我审批的工时</a>"
-print  "        </li>"
-print  "      </ul>"
-print  "    </div>"
-print  "  </div>"
   
-print  "  <div class='layui-side layui-bg-black'>"
-print  "    <div class='layui-side-scroll'>"
-print  "       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->"
-print  "      <ul class='layui-nav layui-nav-tree'  lay-filter='test'>"
-print  "        <li class='layui-nav-item layui-nav-itemed'>"
-print  "          <a class='' href='javascript:;'>工时审批</a>"
-print  "        </li>"
-print  "      </ul>"
-print  "    </div>"
-print  "  </div>"
-  
-print  "  <div class='layui-body'>"
+print  "  <div>"
 print  "    <!-- 内容主体区域 -->"
-print  "    <div style='padding: 8px;'>"
+print  "    <div style='padding: 8px;padding-top:0px;'>"
 print  "      <div class='layui-row' id='test' style='display: none;' height=100px>"
 print  "        <div class='layui-col-md11'>"
 print  "          <form class='layui-form' id='addEmployeeForm' lay-filter='test1'>"
@@ -168,6 +145,7 @@ print  "        <div class='layui-col-md5'>"
 print  "          <form class='layui-form' action=''>"
           
 print "            <select name='city'  lay-verify='' id='#selected' lay-filter='choseweek' >"
+print "                <option value='' lay-filter='oneweek' >%s</option>"%(last_one)
 print "              <option value='0' lay-filter='zeroweek' >%s</option>"%(last_zero)
 print "                <option value='1' lay-filter='oneweek' selected>%s</option>"%(last_one)
 print "               <option value='2' lay-filter='twoweek'>%s</option>"%(last_two)
@@ -185,7 +163,7 @@ print  "    </div>"
 
 
 print  "    <div class='layui-row' style='padding:0px;'>"
-print  "      <div class='layui-col-md12'>"
+print  "      <div class='layui-col-md12' style='margin-bottom:40px'>"
 
 print  "        <table id='demo' lay-filter='test'></table>"
 print  "	<script type='text/html' id='barDemo'>"
@@ -195,7 +173,7 @@ print  "	</script>"
 
 print  "      </div>"
 
-print  "      <div class='layui-row' style='padding: 10px;'>"
+print  "      <div class='layui-row'>"
 print  "        <button class='layui-btn' id='all'>查看全部工时</button>"
 print  "        <button class='layui-btn' id='examined'>已审批的工时</button>"
 print  "        <button class='layui-btn' id='unexamined'>未审批的工时</button>"
@@ -206,7 +184,7 @@ print  "	<p>2.如果数据没有加载出来，请尝试刷新页面<p>"
 print  "    </div>"
 print  "  </div>"
   
-print  "  <div class='layui-footer'>"
+print  "  <div>"
 print  "    <!-- 底部固定区域 -->"
 print  "    © 武汉库柏特科技有限公司-项目工时管理系统"
 print  "  </div>"

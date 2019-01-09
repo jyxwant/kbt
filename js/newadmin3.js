@@ -107,7 +107,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 var $ = layui.jquery;
         var layer = layui.layer;
         var form = layui.form;
-
+var index = layer.load(1);
   layui.$.support.cors = true; //允许ajax跨域
   //第一个实例
 form.on('select(testSelect)', function (data) {
@@ -120,7 +120,8 @@ form.on('select(testSelect)', function (data) {
             // 其他的操作看需求 TODO
         });
  var _window = $(window).height();
-myheight = _window - 350
+myheight = _window * 0.6
+ifreload = 1
   layui.$.support.cors = true; //允许ajax跨域
    var tableIns =table.render({
     elem: '#demo'
@@ -139,13 +140,15 @@ myheight = _window - 350
 
     ]]
       ,done: function (res, curr, count) {// 表格渲染完成之后的回调
-        
+        	ifreload = 0
+		layer.close(index);
             $('div[lay-event="LAYTABLE_COLS"]').remove()
             $('div[lay-event="LAYTABLE_PRINT"]').remove()
           
     }
      
 });
+setTimeout("if(ifreload==1){location.reload();}",2000)
   table.on('tool(test)',function(obj)  {
 
     var index = layui.layer.open({

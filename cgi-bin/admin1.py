@@ -35,7 +35,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "<div class='layui-layout layui-layout-admin'>"
 	print "  <div class='layui-header'>   "
 	print "   <!-- 头部区域（可配合layui已有的水平导航） -->"
-	print "    <ul class='layui-nav layui-layout-left'>"
+	print "    <ul class='layui-nav'>"
 	print "      <li class='layui-nav-item layui-this'><a href='#' onclick='location.reload();'>管理用户</a></li>"
 	print "      <li class='layui-nav-item'><a href='#' onclick = 'business()'>管理项目</a></li>"
 	print "    </ul>"
@@ -43,19 +43,9 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "      <li class='layui-nav-item'><a href=''>admin</a></li><!--python-->"
 	print "    </ul>"
 	print "  </div>  "
-	print "  <div class='layui-side layui-bg-black'>"
-	print "    <div class='layui-side-scroll'>"
-	print "      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->"
-	print "      <ul class='layui-nav layui-nav-tree'  lay-filter='test'>"
-	print "        <li class='layui-nav-item layui-nav-itemed'>"
-	print "          <a class='' href='javascript:;'>管理用户</a>"
-	print "        </li>"
-	print "      </ul>"
-	print "    </div>"
-	print "  </div>"
-	print "  <div class='layui-body'>"
+	print "  <div >"
 	print "    <!-- 内容主体区域 -->"
-	print "    <div style='padding: 8px;'>"
+	print "    <div style='padding: 8px;padding-top:0px;'>"
 	print "<div class='layui-row' style='padding:0px;'>"
 	print "    <div class='layui-col-md12' style='margin-bottom:40px'>"
 	print "              <table class='layui-table'>"
@@ -78,7 +68,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "</form>"
 
 
-	print "<div class='layui-row' style='padding: 10px;'>"
+	print "<div class='layui-row'>"
 	print "	<button class='layui-btn' id='addRow'>添加一个用户</button>"
 
 	print "</div>"
@@ -90,7 +80,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "    </div>"
 	print "  </div>"
   
-	print "  <div class='layui-footer'>"
+	print "  <div>"
 	print "    <!-- 底部固定区域 -->"
 	print "    © 武汉库柏特科技有限公司-项目工时管理系统"
 	print "  </div>"
@@ -100,7 +90,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "<script src='../jquery-3.2.1.js'></script>"
 
 
-	print "<script src ='../js/newadmin1.js'></script>"
+	print "<script src ='../js/newadmin3.js'></script>"
 	print "</body>"
 	print "</html>"
 

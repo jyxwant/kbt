@@ -100,23 +100,7 @@ function addbusiness(){
 
 }
 
-function refresh(){
-  
-    url = location.href;
- 
-    console.log(url);
-    var once = url.split("#");
- 
-    if (once[1] != 1) {
- 
-        url += "#1";
- 
-        self.location.replace(url);
- 
-        window.location.reload();
- 
-    }
-}
+
 console.log(start)
 window.onload=function (){//页面加载时根据本周的起始时间传入数据
         var req = new XMLHttpRequest();
@@ -171,9 +155,11 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 	var $ = layui.jquery;
         var layer = layui.layer;
         var form = layui.form;
+	var index = layer.load(1);
   	//第一个实例
 	 var _window = $(window).height();
-	myheight = _window - 450
+	myheight = _window * 0.6
+        ifreload = 1
    	var tableIns =table.render({
     		elem: '#demo'
     		,height: myheight
@@ -194,6 +180,8 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
     		]]
       		,totalRow: true
      		,done: function (res, curr, count) {// 表格渲染完成之后的回调
+			ifreload = 0
+			layer.close(index);
 			$("div[lay-skin='primary']")[0].remove()
 	        	for (var i in res.data) {
 				var item = res.data[i];
@@ -231,6 +219,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
                     
   		}
 	});
+  setTimeout("if(ifreload==1){location.reload();}",2000)
  form.on('select(choseweek)', function(data){
 	console.log(data.value)
 	if(data.value == 0){
@@ -328,7 +317,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 
         });
 	 var _window = $(window).height();
-	myheight = _window - 350
+	myheight = _window * 0.6
   	table.on('edit(test)', function(obj){
 		tableIns.reload({height: myheight
     		,data : mydata 

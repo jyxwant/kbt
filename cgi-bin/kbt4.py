@@ -92,7 +92,7 @@ if username != []:
   
   print "  <div class='layui-header'>   "
   print "   <!-- 头部区域（可配合layui已有的水平导航） -->"
-  print "    <ul class='layui-nav layui-layout-left'>"
+  print "    <ul class='layui-nav'>"
   print "      <li class='layui-nav-item layui-this'><a href='#' onclick='location.reload();'>工时填写</a></li>"
   print "      <li class='layui-nav-item'><a href='#' onclick='wait()'>待我审批的工时</a></li>"
   print "      <li class='layui-nav-item'><a href='#' onclick='changepassword()'>修改密码</a></li> "
@@ -102,31 +102,10 @@ if username != []:
   print "    </ul>"
   print "  </div>"
   
-  print "  <div class='layui-side layui-bg-black'>"
-  print "    <div class='layui-side-scroll'>"
-  print "      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->"
-  print "      <ul class='layui-nav layui-nav-tree'  lay-filter='test'>"
-  print "        <li class='layui-nav-item layui-nav-itemed'>"
-  print "          <a class='' href='javascript:;''>工时填写</a>"
-  print "        </li>"
-  print "      </ul>"
-  print "    </div>"
-  print "  </div>"
   
-  print "  <div class='layui-side layui-bg-black'>"
-  print "    <div class='layui-side-scroll'>"
-  print "       <!-- 左侧导航区域（可配合layui已有的垂直导航） -->"
-  print "      <ul class='layui-nav layui-nav-tree'  lay-filter='test'>"
-  print "        <li class='layui-nav-item layui-nav-itemed'>"
-  print "          <a class='' href='javascript:;'>工时填写</a>"
-  print "        </li>"
-  print "      </ul>"
-  print "    </div>"
-  print "  </div>"
-  
-  print "  <div class='layui-body'>"
+  print "  <div >"
   print "    <!-- 内容主体区域 -->"
-  print "    <div style='padding: 8px;'>"
+  print "    <div style='padding: 8px;padding-top:0px;'>"
 
 
 
@@ -137,6 +116,7 @@ if username != []:
   print "          <form class='layui-form' action=''>"
   print "          "
   print "            <select name='city'  lay-verify='' id='#selected' lay-filter='choseweek'>"
+  print "                <option value='' >%s</option>"%(last_three)
   print "              <option value='0' >%s</option>"%(last_zero)
   print "                <option value='1' >%s</option>"%(last_one)
   print "               <option value='2'>%s</option>"%(last_two)
@@ -154,13 +134,13 @@ if username != []:
 
 
   print "    <div class='layui-row' style='padding:0px;'>"
-  print "      <div class='layui-col-md12'>"
+  print "      <div class='layui-col-md12' style='margin-bottom:40px'>"
 
   print "        <table id='demo' lay-filter='test'></table>"
 
   print "      </div>"
 
-  print "      <div class='layui-row' style='padding: 10px;'>"
+  print "      <div class='layui-row' >"
   print "        <button class='layui-btn' id='addRow'>添加我所参与的项目</button>"
   print "        <button class='layui-btn' id='delRow'>删除我所选中的项目</button>"
   print "        <button class='layui-btn' id='add' onclick='commitmydata()'>提交工时</button>"

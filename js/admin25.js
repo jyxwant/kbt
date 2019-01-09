@@ -182,7 +182,7 @@ var $ = layui.jquery;
         var layer = layui.layer;
         var form = layui.form;
 	 var _window = $(window).height();
-	myheight = _window - 350
+	myheight = _window * 0.6
   layui.$.support.cors = true; //允许ajax跨域
   //第一个实例
 form.on('select(testSelect)', function (data) {
@@ -194,6 +194,8 @@ form.on('select(testSelect)', function (data) {
             tableData[trElem.data('index')][elem.attr('name')] = data.value;
             // 其他的操作看需求 TODO
         });
+    ifreload = 1
+var index = layer.load(1);
    var tableIns =table.render({
     elem: '#demo'
     ,height: myheight
@@ -217,9 +219,14 @@ form.on('select(testSelect)', function (data) {
 ,{field: 'should', title: '设定的工时上限'}
 ,{fixed: 'right', width: 165, align:'center', toolbar: '#barDemo'}
     ]]
-      
+      ,done:function (res) {   //返回数据执行回调函数
+			    	layer.close(index);    //返回数据关闭loading
+			    	ifreload = 0;
+			    }
      
 });
+
+setTimeout("if(ifreload==1){location.reload();}",2000)
   table.on('tool(test)',function(obj)  {
     var data = obj.data;
     console.log('hello')
