@@ -26,7 +26,10 @@ thursday =  str(thursday.month).zfill(2) + '/' + str(thursday.day).zfill(2)
 friday = now - timedelta(days=now.weekday() + 10)
 getend = str(friday.year) + '-' + str(friday.month).zfill(2) + '-' + str(friday.day).zfill(2)
 friday =  str(friday.month).zfill(2) + '/' + str(friday.day).zfill(2)
-last_zero = '本周' + '(' + monday +'-'+ friday + ')'
+last_zero_monday =  now - timedelta(days=now.weekday())
+last_zero_friday = now - timedelta(days=(now.weekday() - 4))
+last_zero = '本周' + '(' + str(last_zero_monday.month).zfill(2) + '/' + str(last_zero_monday.day).zfill(2) + '-' +  \
+str(last_zero_friday.month).zfill(2) + '/' + str(last_zero_friday.day).zfill(2) + ')'
 last_one_monday = now - timedelta(days=(now.weekday() + 7))
 last_one_friday = now - timedelta(days=(now.weekday() + 3))
 last_one = '上一周' + '('+ str(last_one_monday.month).zfill(2) + '/' + str(last_one_monday.day).zfill(2) + '-' + \
