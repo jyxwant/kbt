@@ -54,7 +54,7 @@ def mail1():
 
     try:
         msg=MIMEText(str(username)+"提交了"+str(mondaytime)+"这一周的"+str(businesscode)+"项目的工时",'plain','utf-8')
-        msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
+        msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
         msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject']=u"项目工时提交".encode('utf-8') #邮件的主题，也可以说是标题
         server=smtplib.SMTP_SSL("smtp.163.com",465)  #发件人邮箱中的SMTP服务器，端口是25
@@ -72,7 +72,7 @@ def mail2():
 
     try:
         msg=MIMEText(str(username)+"删除了"+str(mondaytime)+"这一周的"+str(businesscode)+"项目的工时",'plain','utf-8')
-        msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
+        msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
         msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject']=u"项目工时删除".encode('utf-8') #邮件的主题，也可以说是标题
         server=smtplib.SMTP_SSL("smtp.163.com",465)  #发件人邮箱中的SMTP服务器，端口是25
@@ -90,7 +90,7 @@ def mail3():
 
     try:
         msg=MIMEText(str(username)+"同意了"+str(mondaytime)+"这一周的"+str(businesscode)+"项目的工时",'plain','utf-8')
-        msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
+        msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
         msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject']=u"项目工时审批通过".encode('utf-8') #邮件的主题，也可以说是标题
         server=smtplib.SMTP_SSL("smtp.163.com",465)  #发件人邮箱中的SMTP服务器，端口是25
@@ -108,7 +108,7 @@ def mail4():
 
     try:
         msg=MIMEText(str(username)+"拒绝了"+str(mondaytime)+"这一周的"+str(businesscode)+"项目的工时",'plain','utf-8')
-        msg['From']=formataddr(["库柏特项目工时管理系统",my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
+        msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
         msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject']=u"项目工时审批拒绝".encode('utf-8') #邮件的主题，也可以说是标题
         server=smtplib.SMTP_SSL("smtp.163.com",465)  #发件人邮箱中的SMTP服务器，端口是25

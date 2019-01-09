@@ -31,24 +31,24 @@ var mondaytime = document.getElementById('mondaytime').innerText
 
 function commitmydata(){
 	
-	if($('div[class="layui-table-total"] td[data-key="1-0-4"]')[0].innerText > 8){
-		layer.confirm('周一的项目总工时超过8小时', function(index){layer.close(index); })
+	if($('div[class="layui-table-total"] td[data-key="1-0-4"]')[0].innerText != 8){
+		layer.confirm('周一的项目总工时必须满足8小时', function(index){layer.close(index); })
 		
 	}
-	else if ($('div[class="layui-table-total"] td[data-key="1-0-5"]')[0].innerText > 8){
-		layer.confirm('周二的项目总工时超过8小时', function(index){layer.close(index); })
+	else if ($('div[class="layui-table-total"] td[data-key="1-0-5"]')[0].innerText != 8){
+		layer.confirm('周二的项目总工时必须满足8小时', function(index){layer.close(index); })
 		
 	}
-else if ($('div[class="layui-table-total"] td[data-key="1-0-6"]')[0].innerText > 8){
-		layer.confirm('周三的项目总工时超过8小时', function(index){layer.close(index); })
+else if ($('div[class="layui-table-total"] td[data-key="1-0-6"]')[0].innerText != 8){
+		layer.confirm('周三的项目总工时必须满足8小时', function(index){layer.close(index); })
 		
 	}
-else if ($('div[class="layui-table-total"] td[data-key="1-0-7"]')[0].innerText > 8){
-		layer.confirm('周四的项目总工时超过8小时', function(index){layer.close(index); })
+else if ($('div[class="layui-table-total"] td[data-key="1-0-7"]')[0].innerText != 8){
+		layer.confirm('周四的项目总工时必须满足8小时', function(index){layer.close(index); })
 		
 	}
-else if ($('div[class="layui-table-total"] td[data-key="1-0-8"]')[0].innerText > 8){
-		layer.confirm('周五的项目总工时超过8小时', function(index){layer.close(index); })
+else if ($('div[class="layui-table-total"] td[data-key="1-0-8"]')[0].innerText != 8){
+		layer.confirm('周五的项目总工时必须满足8小时', function(index){layer.close(index); })
 		
 	}
 else{

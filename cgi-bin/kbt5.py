@@ -35,20 +35,20 @@ friday = str(friday.month).zfill(2) + '/' + str(friday.day).zfill(2)
 last_zero = '本周' + '(' + monday +'-'+ friday + ')'
 last_one_monday = now - timedelta(days=(now.weekday() + 7))
 last_one_friday = now - timedelta(days=(now.weekday() + 3))
-last_one = '上一周' + '(' + str(last_one_monday.year) + '/' + str(last_one_monday.month).zfill(2) + '/' + str(last_one_monday.day).zfill(2) + '-' + str(last_one_friday.year) \
-+ '/' + str(last_one_friday.month).zfill(2) + '/' + str(last_one_friday.day).zfill(2) + ')'
+last_one = '上一周' + '(' + str(last_one_monday.month).zfill(2) + '/' + str(last_one_monday.day).zfill(2) + '-' +  \
+str(last_one_friday.month).zfill(2) + '/' + str(last_one_friday.day).zfill(2) + ')'
 last_two_monday = now - timedelta(days=(now.weekday() + 14))
 last_two_friday = now - timedelta(days=(now.weekday() + 10))
-last_two = '上两周' + '(' + str(last_two_monday.year) + '/' + str(last_two_monday.month).zfill(2) + '/' + str(last_two_monday.day).zfill(2) + '-' + str(last_two_friday.year) \
-+ '/' + str(last_two_friday.month).zfill(2) + '/' + str(last_two_friday.day).zfill(2) + ')'
+last_two = '上两周' + '(' + str(last_two_monday.month).zfill(2) + '/' + str(last_two_monday.day).zfill(2) + '-' + \
+str(last_two_friday.month).zfill(2) + '/' + str(last_two_friday.day).zfill(2) + ')'
 last_three_monday = now - timedelta(days=(now.weekday() + 21))
 last_three_friday = now - timedelta(days=(now.weekday() + 17))
-last_three = '上三周' + '(' + str(last_three_monday.year) + '/' + str(last_three_monday.month).zfill(2) + '/' + str(last_three_monday.day).zfill(2) + '-' + str(last_three_friday.year) \
-+ '/' + str(last_three_friday.month).zfill(2) + '/' + str(last_three_friday.day).zfill(2) + ')'
+last_three = '上三周' + '(' + str(last_three_monday.month).zfill(2) + '/' + str(last_three_monday.day).zfill(2) + '-' + \
+str(last_three_friday.month).zfill(2) + '/' + str(last_three_friday.day).zfill(2) + ')'
 last_four_monday = now - timedelta(days=(now.weekday() + 28))
 last_four_friday = now - timedelta(days=(now.weekday() + 24))
-last_four = '上四周' + '(' + str(last_four_monday.year) + '/' + str(last_four_monday.month).zfill(2) + '/' + str(last_four_monday.day).zfill(2) + '-' + str(last_four_friday.year) \
-+ '/' + str(last_four_friday.month).zfill(2) + '/' + str(last_four_friday.day).zfill(2) + ')'
+last_four = '上四周' + '(' + str(last_four_monday.month).zfill(2) + '/' + str(last_four_monday.day).zfill(2) + '-' +  \
+str(last_four_friday.month).zfill(2) + '/' + str(last_four_friday.day).zfill(2) + ')'
 
 
 
