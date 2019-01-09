@@ -1,5 +1,5 @@
   .layui-table-cell {
-    height: auto; 
+    height:auto !important;
     line-height: 28px;
     padding: 0 15px;
     position: relative;

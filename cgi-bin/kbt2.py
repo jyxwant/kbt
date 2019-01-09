@@ -22,16 +22,16 @@ now = datetime.datetime.now()
 monday = now - timedelta(days=now.weekday() + 7)
 mondaytime = str(monday.year) + '-' + str(monday.month).zfill(2) + '-' + str(monday.day).zfill(2)
 getstart = str(monday.year) + '-' + str(monday.month).zfill(2) + '-' + str(monday.day).zfill(2)
-monday = str(monday.year) + '/' + str(monday.month).zfill(2) + '/' + str(monday.day).zfill(2)
+monday = str(monday.month).zfill(2) + '/' + str(monday.day).zfill(2)
 tuesday = now - timedelta(days=(now.weekday() + 6))
-tuesday = str(tuesday.year) + '/' + str(tuesday.month).zfill(2) + '/' + str(tuesday.day).zfill(2)
+tuesday =  str(tuesday.month).zfill(2) + '/' + str(tuesday.day).zfill(2)
 wednesday = now - timedelta(days=now.weekday() + 5)
-wednesday = str(wednesday.year) + '/' + str(wednesday.month).zfill(2) + '/' + str(wednesday.day).zfill(2)
+wednesday =  str(wednesday.month).zfill(2) + '/' + str(wednesday.day).zfill(2)
 thursday = now - timedelta(days=now.weekday() + 4)
-thursday = str(thursday.year) + '/' + str(thursday.month).zfill(2) + '/' + str(thursday.day).zfill(2)
+thursday = str(thursday.month).zfill(2) + '/' + str(thursday.day).zfill(2)
 friday = now - timedelta(days=now.weekday() + 3)
 getend = str(friday.year) + '-' + str(friday.month).zfill(2) + '-' + str(friday.day).zfill(2)
-friday = str(friday.year) + '/' + str(friday.month).zfill(2) + '/' + str(friday.day).zfill(2)
+friday = str(friday.month).zfill(2) + '/' + str(friday.day).zfill(2)
 last_zero = '本周' + '(' + monday +'-'+ friday + ')'
 last_one_monday = now - timedelta(days=(now.weekday() + 7))
 last_one_friday = now - timedelta(days=(now.weekday() + 3))
@@ -203,7 +203,7 @@ if username != []:
   print "<script src='../DataTableExtend.js'></script>"
   print "<script src='../layui/layui.js ''></script>"
   print "<script src='../jquery-3.2.1.js'></script>"
-  print "<script src='../js/gongshi.js'></script>"
+  print "<script src='../js/gongshi1.js'></script>"
   print "</body>"
   print "</html>"
 

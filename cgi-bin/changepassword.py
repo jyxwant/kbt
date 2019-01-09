@@ -39,7 +39,7 @@ print "<div id='myname' style='display:none;'>%s</div>"%(site_email)
 print "<div class='layui-layout layui-layout-admin'>"
 print "  <div class='layui-header'>   "
 print "   <!-- 头部区域（可配合layui已有的水平导航） -->"
-print "    <ul class='layui-nav layui-layout-left'>"
+print "    <ul class='layui-nav '>"
 print "      <li class='layui-nav-item '><a href='#' onclick = 'kbt()'>工时填写</a></li>"
 print "      <li class='layui-nav-item'><a href='#' onclick = 'waitforme()'>待我审批的工时</a></li>"
 print "      <li class='layui-nav-item layui-this'><a href='#' onclick='location.reload();'>修改密码</a></li> "
@@ -48,20 +48,8 @@ print "    <ul class='layui-nav layui-layout-right'>"
 print "      <li class='layui-nav-item'><a href='#'>%s</a></li><!--python-->"%(site_email)
 print "    </ul>"
 print "  </div>"
- 
-print "  <div class='layui-side layui-bg-black'>"
-print "    <div class='layui-side-scroll'>"
-print "      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->"
-print "      <ul class='layui-nav layui-nav-tree'  lay-filter='test'>"
-print "        <li class='layui-nav-item layui-nav-itemed'>"
-print "          <a class='' href='javascript:;'>修改密码</a>"
-print "        </li>"
 
-print "      </ul>"
-print "    </div>"
-print "  </div>"
-  
-print "  <div class='layui-body'>"
+print "  <div >"
 print "    <!-- 内容主体区域 -->"
 print "    <div style='padding: 8px;'>"
 
@@ -110,7 +98,7 @@ print "  </div>"
 print "    </div>"
 
   
-print "  <div class='layui-footer'>"
+print "  <div>"
 print "    <!-- 底部固定区域 -->"
 print "    © 武汉库柏特科技有限公司-项目工时管理系统"
 print "  </div>"

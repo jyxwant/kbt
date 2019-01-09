@@ -65,9 +65,10 @@ else{
 			var wednesday = mydata[i].Wednesday
 			var thursday = mydata[i].Thursday
 			var friday  = mydata[i].Friday
+			var businessmanager = mydata[i].businessmanager
 			var req = new XMLHttpRequest();
         req.open("GET","./gongshicommit.py?businesscode="+businesscode+"&mondaytime="+mondaytime
-+"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday,false);
++"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager,false);
         req.send(null);
         res = req.responseText;
 	console.log(res)	
@@ -247,9 +248,10 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 		if(trDel[0].childNodes[4].innerText.length < 3){
 
 	var businesscode =  trDel[0].childNodes[1].innerText
+	var businessmanager =  trDel[0].childNodes[3].innerText
 	var req = new XMLHttpRequest();
         req.open("GET","./gongshidelete.py?businesscode="+businesscode+"&mondaytime="+mondaytime
-+"&username="+username,false);
++"&username="+username+"&businessmanager="+businessmanager,false);
 	console.log('ok')
         req.send(null);
         res = req.responseText;

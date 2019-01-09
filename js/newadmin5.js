@@ -159,18 +159,18 @@ setTimeout("if(ifreload==1){location.reload();}",2000)
 + '<div class="layui-col-md11">'
 + '<form class="layui-form" id="addEmployeeForm">'
 +'<div class="layui-form-item">'
-+                       ' <label class="layui-form-label">用户名 &nbsp;&nbsp;  （邮箱）：</label>'
++                       ' <label class="layui-form-label" style="width:150px;">用户名(邮箱):</label>'
 +			'<label class="layui-form-label" id = "emailname">'+obj.data.emailname+'</label>'                      
 +                 '</div>'
 +'     <div class="layui-form-item">'
-+                        '<label class="layui-form-label">用户姓名：</label>'
++                        '<label class="layui-form-label" style="width:150px;">用户姓名:</label>'
 +	' <div class="layui-input-block">'
 +                        '   <input type="text" id="Name" class="layui-input" value="'+obj.data.Name+'">'
 +                      '</div>'
 
 +                    '</div>'
 +'<div class="layui-form-item">'
-+                        '<label class="layui-form-label">用户密码：</label>'
++                        '<label class="layui-form-label" style="width:150px;">用户密码:</label>'
 +                        '<div class="layui-input-block">'
 +                           ' <input type="text" id="password" class="layui-input" value="'+obj.data.password+'">'
 +                       ' </div>'
@@ -186,7 +186,7 @@ setTimeout("if(ifreload==1){location.reload();}",2000)
 +   '</div>'
 +'</div>'
         ,//弹出层页面
-        area: ['500px', '300px']
+        area: ['1000px', '500px']
     })
     form.on('submit(childsubmit)', function() {
       var newemailname = $('#emailname').val()
@@ -217,19 +217,19 @@ setTimeout("if(ifreload==1){location.reload();}",2000)
 +'           <div class="layui-col-md11">'
 +'                <form class="layui-form" id="addEmployeeForm">'
 +'                    <div class="layui-form-item">'
-+'                        <label class="layui-form-label">用户名      &nbsp;&nbsp;（邮箱）：</label>'
++'                        <label class="layui-form-label" style="width:100px;">用户名(邮箱):</label>'
 +'                        <div class="layui-input-block">'
 +'                            <input type="text" id="newemailname" class="layui-input">'
 +'                        </div>'
 +'                    </div>'
 +'<div class="layui-form-item">'
-+'                        <label class="layui-form-label">用户密码：</label>'
++'                        <label class="layui-form-label" style="width:100px;">用户密码:</label>'
 +'                        <div class="layui-input-block">'
 +'                            <input type="text" id="newpassword" class="layui-input">'
 +'                        </div>'
 +'                    </div>'
 +'<div class="layui-form-item">'
-+'                        <label class="layui-form-label">用户姓名：</label>'
++'                        <label class="layui-form-label" style="width:100px;">用户姓名:</label>'
 +'                        <div class="layui-input-block">'
 +'                            <input type="text" id="newname" class="layui-input">'
 +'                        </div>'
@@ -242,7 +242,8 @@ setTimeout("if(ifreload==1){location.reload();}",2000)
 +'                    </div>'
 +'                </form>'
 +'            </div>'
-+'        </div>'
++'        </div>'        ,//弹出层页面
+        area: ['1000px', '500px']
                     });
 form.on('submit(addsubmit)', function() {
       var newemailname = $('#newemailname').val()
@@ -263,7 +264,7 @@ table.reload("demo", {
     ,data : dataBak 
     ,page: false
     ,cols: [[ //表头
-     {field: 'emailname', title: '用户名\n&nbsp;（邮箱）'}
+     {field: 'emailname', title: '用户名(邮箱)'}
       ,{field: 'password', title: '登录密码'}
       ,{field: 'Name', title: '用户姓名'} 
     ]]
