@@ -35,20 +35,21 @@ last_three_mondaytime = str(last_three_monday.year) + '-' + str(last_three_monda
 last_four_monday = now - timedelta(days=now.weekday() + 28)
 last_four_mondaytime = str(last_four_monday.year) + '-' + str(last_four_monday.month).zfill(2) + '-' + str(last_four_monday.day).zfill(2)
 
+ratio = '0/' + str(should)
 
 db   = sqlite3.connect('../database/kbt.db')
 cu   = db.cursor()
 cu.execute('INSERT INTO BUSINESS VALUES ("%s","%s","%s","%s","%s","%s","%s","%s","%s","%s","%s");'%(businesscode,businessname,businessmanager,now1,businessworker,workertime,beyond,start,end,should,status))
 if mondaytime > start and mondaytime< end:
-	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","none","%s","none","0","0","0","0","0","none","0","%s","%s");'%(businesscode,businessname,start,businessmanager,end,mondaytime))
+	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","%s","%s","none","0","0","0","0","0","none","0","%s","%s","此用户没有填写工时说明");'%(businesscode,businessname,start,ratio,businessmanager,end,mondaytime))
 if last_one_mondaytime > start and last_one_mondaytime< end:
-	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","none","%s","none","0","0","0","0","0","none","0","%s","%s");'%(businesscode,businessname,start,businessmanager,end,last_one_mondaytime))
+	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","%s","%s","none","0","0","0","0","0","none","0","%s","%s","此用户没有填写工时说明");'%(businesscode,businessname,start,ratio,businessmanager,end,last_one_mondaytime))
 if last_two_mondaytime > start and last_two_mondaytime< end:
-	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","none","%s","none","0","0","0","0","0","none","0","%s","%s");'%(businesscode,businessname,start,businessmanager,end,last_two_mondaytime))
+	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","%s","%s","none","0","0","0","0","0","none","0","%s","%s","此用户没有填写工时说明");'%(businesscode,businessname,start,ratio,businessmanager,end,last_two_mondaytime))
 if last_three_mondaytime > start and last_three_mondaytime< end:
-	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","none","%s","none","0","0","0","0","0","none","0","%s","%s");'%(businesscode,businessname,start,businessmanager,end,last_three_mondaytime))
+	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","%s","%s","none","0","0","0","0","0","none","0","%s","%s","此用户没有填写工时说明");'%(businesscode,businessname,start,ratio,businessmanager,end,last_three_mondaytime))
 if last_four_mondaytime > start and last_four_mondaytime< end:
-	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","none","%s","none","0","0","0","0","0","none","0","%s","%s");'%(businesscode,businessname,start,businessmanager,end,last_four_mondaytime))
+	cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","none","%s","%s","none","0","0","0","0","0","none","0","%s","%s","此用户没有填写工时说明");'%(businesscode,businessname,start,ratio,businessmanager,end,last_four_mondaytime))
 db.commit()
 db.close()
 

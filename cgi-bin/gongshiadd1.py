@@ -25,7 +25,7 @@ endtime = form.getvalue('endtime')
 
 db   = sqlite3.connect('../database/kbt.db')
 cu   = db.cursor()
-cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","%s","0","0","0","0","0","未审批","%s","%s","%s");'\
+cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","%s","0","0","0","0","0","未审批","%s","%s","%s","此用户没有填写工时说明");'\
 	%(businesscode,businessname,starttime,done,ratio,businessmanager,username,now,endtime,mondaytime))
 db.commit()
 db.close()

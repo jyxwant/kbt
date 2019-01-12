@@ -115,6 +115,12 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
   })
   table.on('tool(test)',function(obj)  {
     var data = obj.data;
+    if(obj.event === 'detail'){ 
+      layer.confirm(data.remark, function(index){
+        layer.close(index);
+      });
+
+    };
     if(obj.event === 'del'){ 
       layer.confirm('拒绝此工时提交', function(index){
       //obj.del();这里是操作

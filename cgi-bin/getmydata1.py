@@ -32,7 +32,8 @@ for key in result:
 	k8 = key[11].encode('raw_unicode_escape')
 	k9 = key[12].encode('raw_unicode_escape')
 	k10 = key[4].encode('raw_unicode_escape')
-	lastresult.append({"businesscode":k1,"businessname":k2,"businessman":k3,"Monday":k4,"Tuesday":k5,"Wednesday":k6,"Thursday":k7,"Friday":k8,"Judge":k9,"ratio":k10})
+	k11 = key[16].encode('raw_unicode_escape')
+	lastresult.append({"businesscode":k1,"businessname":k2,"businessman":k3,"Monday":k4,"Tuesday":k5,"Wednesday":k6,"Thursday":k7,"Friday":k8,"Judge":k9,"ratio":k10,"remark":k11})
 
 
 print("Content-type: text/html\n")

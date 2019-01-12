@@ -29,7 +29,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "  <link rel='stylesheet' href='../css/mycss.css'>"
 
 	print "</head>"
-	print "<body class='layui-layout-body'>"
+	print "<body class='layui-layout-body' style='overflow-y:scroll;'>"
 	print "<form method='post' action='admin1.py' style='display:none;'>"
 	print "<input name='username' value=%s >"%(site_name)
 	print "<input name='pwd' type='password' value=%s  >"%(site_url)

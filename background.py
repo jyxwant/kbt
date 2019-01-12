@@ -45,7 +45,7 @@ while(True):
 				onlyone.append(k1)
 		for key in theonly:
 			ratio = str(key['now']) + '/' + str(key['should'])
-			cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","none","0","0","0","0","0","none","%s","%s","%s")'\
+			cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","none","0","0","0","0","0","none","%s","%s","%s","此用户没有填写工时说明")'\
 				%(key['businesscode'],key['businessname'],key['starttime'],key['should'],ratio,key['businessmanager'],key['now'],key['endtime'],monday))
 		#for循环，直接更新work表格
 		for key in onlyone:
@@ -63,7 +63,7 @@ while(True):
 				k7 = newkey[6]
 				k8 = newkey[13]
 				k9 = newkey[14]
-				cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","%s","0","0","0","0","0","未审批","%s","%s","%s")'\
+				cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","%s","0","0","0","0","0","未审批","%s","%s","%s","此用户没有填写工时说明")'\
 					%(k1,k2,k3,k4,k5,k6,k7,k8,k9,monday))
 		db.commit()
 		db.close()

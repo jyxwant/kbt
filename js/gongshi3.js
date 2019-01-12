@@ -12,6 +12,8 @@ layui.use('element', function(){
 
 
 
+
+
 layui.use('form', function(){
   var form = layui.form;
   
@@ -66,15 +68,17 @@ else{
 			var thursday = mydata[i].Thursday
 			var friday  = mydata[i].Friday
 			var businessmanager = mydata[i].businessmanager
+			var remark = mydata[i].remark
 			var req = new XMLHttpRequest();
         req.open("GET","./gongshicommit.py?businesscode="+businesscode+"&mondaytime="+mondaytime
-+"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager,false);
++"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager+"&remark="+remark,false);
         req.send(null);
         res = req.responseText;
 	console.log(res)	
 		}
-	location.reload();
+	
 	}
+	location.reload();
 	}
 
 
@@ -178,6 +182,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       			,{field: 'Thursday', title:thisthursday ,edit:'text', totalRow: true}
       			,{field: 'Friday', title:thisfriday ,edit:'text', totalRow: true}
       			,{field: 'Judge', title: '审批状态'}
+      			,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
     		]]
       		,totalRow: true
      		,done: function (res, curr, count) {// 表格渲染完成之后的回调
@@ -190,6 +195,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 					//$('tr[data-index=' + i + '] input[type="checkbox"]').prop('disabled', true);
 					$('tr[data-index=' + i + '] td[data-edit="text"]').data('edit', null);
 					$('tr[data-index=' + i + '] div[lay-skin="primary"]').remove();
+					$('tr[data-index=' + i + '] a[lay-event="detail"]').remove()
 				}
 			}
                 	count || this.elem.next('.layui-table-view').find('.layui-table-header').css('overflow', 'auto');
@@ -239,6 +245,44 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 	document.getElementById("kbt5").click();
 	}
   })
+table.on('tool(test)',function(obj)  {
+    var data = obj.data;
+    if(obj.event === 'detail'){ 
+ var index = layui.layer.open({
+        title : "工时说明",
+        type : 1,
+        content : 
+'<div class="layui-row" id="test1">'
++  '<div class="layui-form-item layui-form-text">'
++    '<label class="layui-form-label">请填写</label>'
++ '<form class="layui-form" id="addEmployeeForm">'
++    '<div class="layui-input-block layui-col-md10">'
++      '<textarea name="desc"  class="layui-textarea" id="remark">'+data.remark+'</textarea>'
++    '</div>'
++                '<div class="layui-form-item">'
++                   '<div class="layui-input-block">'
++                      '<button id = "editchild" class="layui-btn layui-btn-submit "  lay-submit="" lay-filter="childsubmit">修改工时说明</button>'
++               '</div>'
++           '</div>'
++      '</form>'
++ ' </div>'
++ ' </div>'
+        ,//弹出层页面
+        area: ['800px', '300px']
+    })
+    form.on('submit(childsubmit)', function() {
+      var newremark = $('#remark').val()
+	console.log(newremark)
+             obj.update({
+			remark:newremark
+                });
+	//changeremark()
+        layer.close(index);
+	
+        return false
+  }) 
+    };
+  }) 
  $('#delRow').click(function () {
 	layer.confirm('真的删除这些项目吗', function(index){
        
@@ -265,7 +309,30 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 
 
 })
+function changeremark(){
 
+	for(let i=0;i < mydata.length;i++){
+		if(mydata[i].Judge == "未审批" ){
+			var businesscode = mydata[i].businesscode
+			var monday = mydata[i].Monday
+			var tuesday = mydata[i].Tuesday
+			var wednesday = mydata[i].Wednesday
+			var thursday = mydata[i].Thursday
+			var friday  = mydata[i].Friday
+			var businessmanager = mydata[i].businessmanager
+			var remark = mydata[i].remark
+			var req = new XMLHttpRequest();
+        req.open("GET","./gongshiremark.py?businesscode="+businesscode+"&mondaytime="+mondaytime
++"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager+"&remark="+remark,false);
+        req.send(null);
+        res = req.responseText;
+	console.log(res)	
+		}
+	
+	}
+	location.reload();
+
+}
 
 	$('#addRow').click(function () {
   		var index = layui.layer.open({
@@ -336,6 +403,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       			,{field: 'Thursday', title: thisthursday,edit:'text', totalRow: true}
       			,{field: 'Friday', title: thisfriday,edit:'text', totalRow: true}
       			,{field: 'Judge', title: '审批状态'}
+			,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
 
     		]]
 		,totalRow: true
@@ -347,6 +415,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 					//$('tr[data-index=' + i + '] input[type="checkbox"]').prop('disabled', true);
 					$('tr[data-index=' + i + '] td[data-edit="text"]').data('edit', null);
 					$('tr[data-index=' + i + '] div[lay-skin="primary"]').remove();
+					$('tr[data-index=' + i + '] a[lay-event="detail"]').remove()
 				}
 			}
                 	count || this.elem.next('.layui-table-view').find('.layui-table-header').css('overflow', 'auto');

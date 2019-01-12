@@ -36,7 +36,7 @@ result = cu.fetchall()
 if result==[]:
     cu.execute('INSERT INTO EMAIL VALUES ("%s","%s","%s","%s","%s","1");'%(username,businessmanager,my_user,businesscode,mondaytime))
 
-cu.execute('update WORK set MONDAY = "%s", TUESDAY="%s", WEDNESDAY="%s",THURSDAY="%s",FRIDAY="%s",REMARK="%s" where PROJECTID="%s" and PROJECTWORKER="%s" and MONDAYTIME="%s"'%(monday,tuesday,wednesday,thursday,friday,remark,businesscode,username,mondaytime))
+cu.execute('update WORK set REMARK="%s" where PROJECTID="%s" and PROJECTWORKER="%s" and MONDAYTIME="%s"'%(remark,businesscode,username,mondaytime))
 db.commit()
 db.close()
 

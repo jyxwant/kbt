@@ -69,7 +69,7 @@ if username != []:
   print "  <link rel='stylesheet' href='../layui/css/layui.css'>"
   print "  <link rel='stylesheet' href='../css/mycss.css'>"
   print "</head>"
-  print "<body class='layui-layout-body'>"
+  print "<body class='layui-layout-body' style='overflow-y:scroll;'>"
   print "<form method='post' action='waitforme1.py' style='display:none;'>"
   print "<input name='username' value=%s class='ur' />"%(site_email)
   print "<input name='pwd' value=%s class='pw' />"%(site_password)
@@ -140,6 +140,9 @@ if username != []:
   print "      <div class='layui-col-md12' style='margin-bottom:40px'>"
 
   print "        <table id='demo' lay-filter='test'></table>"
+  print  "  <script type='text/html' id='barDemo'>"
+  print  "      <a class='layui-btn layui-btn-primary layui-btn-xs' lay-event='detail'>工时说明</a>"
+  print  "  </script>"
 
   print "      </div>"
 
@@ -206,7 +209,7 @@ if username != []:
   print "<script src='../DataTableExtend.js'></script>"
   print "<script src='../layui/layui.js ''></script>"
   print "<script src='../jquery-3.2.1.js'></script>"
-  print "<script src='../js/gongshi1.js'></script>"
+  print "<script src='../js/gongshi3.js'></script>"
   print "</body>"
   print "</html>"
 

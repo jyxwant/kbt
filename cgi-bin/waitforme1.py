@@ -76,7 +76,7 @@ print "<div id = 'mondaytime' style='display:none;'>%s</div>"%(mondaytime)
 
 
 print "</form>"
-print "<body class='layui-layout-body'>"
+print "<body class='layui-layout-body' style='overflow-y:scroll;'>"
 print "<form method='post' action='kbt1.py' style='display:none;'>"
 print "<input name='username' value=%s class='ur' />"%(site_email)
 print "<input name='pwd' value=%s class='pw' />"%(site_password)
@@ -173,6 +173,7 @@ print  "        <table id='demo' lay-filter='test'></table>"
 print  "	<script type='text/html' id='barDemo'>"
 print  "		<a class='layui-btn layui-btn-xs' lay-event='edit'>同意</a>"
 print  "  		<a class='layui-btn layui-btn-danger layui-btn-xs' lay-event='del'>拒绝</a>"
+print  "  		<a class='layui-btn layui-btn-primary layui-btn-xs' lay-event='detail'>查看工时说明</a>"
 print  "	</script>"
 
 print  "      </div>"
@@ -240,4 +241,4 @@ print "</form>"
 print  "<script src='../DataTableExtend.js'></script>"
 print  "<script src='../layui/layui.js '></script>"
 print  "<script src='../jquery-3.2.1.js'></script>"
-print  "<script src='../js/waitforme1.js'></script>"
+print  "<script src='../js/waitforme3.js'></script>"
