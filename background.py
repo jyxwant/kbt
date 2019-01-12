@@ -44,9 +44,12 @@ while(True):
 					"now":k4,"starttime":k5,"endtime":k6,"should":k7})
 				onlyone.append(k1)
 		for key in theonly:
-			ratio = str(key['now']) + '/' + str(key['should'])
-			cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","none","0","0","0","0","0","none","%s","%s","%s","此用户没有填写工时说明")'\
-				%(key['businesscode'],key['businessname'],key['starttime'],key['should'],ratio,key['businessmanager'],key['now'],key['endtime'],monday))
+			cu.execute('select * from WORK where JUDGE="none" and PROJECTID="%s" and MONDAYTIME="%s"'%(key['businesscode'],monday))
+			theresult = cu.fetchall()
+			if theresult == []:
+				ratio = str(key['now']) + '/' + str(key['should'])
+				cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","none","0","0","0","0","0","none","%s","%s","%s","此用户没有填写工时说明")'\
+					%(key['businesscode'],key['businessname'],key['starttime'],key['should'],ratio,key['businessmanager'],key['now'],key['endtime'],monday))
 		#for循环，直接更新work表格
 		for key in onlyone:
 			print key
