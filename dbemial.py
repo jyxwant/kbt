@@ -19,7 +19,7 @@ sys.setdefaultencoding('utf8')
 
 while(True):
 	From = "cobotsys2019@163.com"
-	To = "j1132346005@163.com"
+	To = "liaoshenghua@cobotsys.com"
 	file_name = "./database/kbt.db"
 	server=smtplib.SMTP_SSL("smtp.163.com",465)
 	server.login("cobotsys2019@163.com","cobot2019")
@@ -46,6 +46,5 @@ while(True):
 		server.sendmail(From, To, fullText)
 	finally:
 		server.quit()
-
 	time.sleep(24*3600)
 
