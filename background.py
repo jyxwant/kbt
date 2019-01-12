@@ -53,7 +53,7 @@ while(True):
 		#for循环，直接更新work表格
 		for key in onlyone:
 			print key
-			cu.execute('select * from WORK where JUDGE!="none" and PROJECTID="%s" and MONDAYTIME="%s"'%(key,lastmonday))
+			cu.execute('select * from WORK where JUDGE="审批通过" and PROJECTID="%s" and MONDAYTIME="%s" '%(key,lastmonday))
 			newresult = cu.fetchall()
 			print newresult
 			for newkey in newresult:
