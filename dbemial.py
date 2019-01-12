@@ -46,5 +46,6 @@ while(True):
 		server.sendmail(From, To, fullText)
 	finally:
 		server.quit()
+
 	time.sleep(24*3600)
 
