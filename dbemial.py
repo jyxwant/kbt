@@ -21,7 +21,7 @@ while(True):
 	From = "cobotsys2019@163.com"
 	To = "j1132346005@163.com"
 	file_name = "./database/kbt.db"
-	server = smtplib.SMTP("smtp.163.com")
+	server=smtplib.SMTP_SSL("smtp.163.com",465)
 	server.login("cobotsys2019@163.com","cobot2019")
 	main_msg = email.MIMEMultipart.MIMEMultipart()
 	text_msg = email.MIMEText.MIMEText("")
