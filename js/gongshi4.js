@@ -60,7 +60,7 @@ else{
 	}
 
 	for(let i=0;i < mydata.length;i++){
-		if(mydata[i].Judge == "未审批" ){
+		if(mydata[i].Judge == "未审批" ||   mydata[i].Judge == "未提交"){
 			var businesscode = mydata[i].businesscode
 			var monday = mydata[i].Monday
 			var tuesday = mydata[i].Tuesday
@@ -69,9 +69,10 @@ else{
 			var friday  = mydata[i].Friday
 			var businessmanager = mydata[i].businessmanager
 			var remark = mydata[i].remark
+			var businessname = mydata[i].businessname
 			var req = new XMLHttpRequest();
         req.open("GET","./gongshicommit.py?businesscode="+businesscode+"&mondaytime="+mondaytime
-+"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager+"&remark="+remark,false);
++"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager+"&remark="+remark+"&businessname="+businessname,false);
         req.send(null);
         res = req.responseText;
 	console.log(res)	
@@ -261,7 +262,7 @@ table.on('tool(test)',function(obj)  {
 +    '</div>'
 +                '<div class="layui-form-item">'
 +                   '<div class="layui-input-block">'
-+                      '<button id = "editchild" class="layui-btn layui-btn-submit "  lay-submit="" lay-filter="childsubmit">修改工时说明</button>'
++                      '<button id = "editchild" class="layui-btn layui-btn-submit "  lay-submit="" lay-filter="childsubmit">保存</button>'
 +               '</div>'
 +           '</div>'
 +      '</form>'
@@ -293,9 +294,10 @@ table.on('tool(test)',function(obj)  {
 
 	var businesscode =  trDel[0].childNodes[1].innerText
 	var businessmanager =  trDel[0].childNodes[3].innerText
+	var businessname = trDel[0].childNodes[2].innerText
 	var req = new XMLHttpRequest();
         req.open("GET","./gongshidelete.py?businesscode="+businesscode+"&mondaytime="+mondaytime
-+"&username="+username+"&businessmanager="+businessmanager,false);
++"&username="+username+"&businessmanager="+businessmanager+"&businessname="+businessname,false);
 	console.log('ok')
         req.send(null);
         res = req.responseText;
@@ -312,7 +314,7 @@ table.on('tool(test)',function(obj)  {
 function changeremark(){
 
 	for(let i=0;i < mydata.length;i++){
-		if(mydata[i].Judge == "未审批" ){
+		if(mydata[i].Judge == "未审批" ||  mydata[i].Judge == "未提交"){
 			var businesscode = mydata[i].businesscode
 			var monday = mydata[i].Monday
 			var tuesday = mydata[i].Tuesday

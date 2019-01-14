@@ -92,6 +92,8 @@ print "</form>"
 
       
 print "  </div>"
+print  "      <p>审批说明<p>"
+print  "      <p>1.密码只能由字母与数字组成，区分大小写</p>"
 
 
  

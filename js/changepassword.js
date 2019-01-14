@@ -12,7 +12,14 @@ function kbt(){
 	document.getElementById("kbt").click();
 }
 
-
+function validateStrAndNo(str) {
+var reg = {letter:"^[A-Za-z]+$",num:"^([+-]?)\\d*\\.?\\d+$"};
+if((new RegExp(reg.letter)).test(str) || (new RegExp(reg.num)).test(str)) {
+return true;
+}else {
+return false;
+}
+}
 
 layui.use('form', function(){
   var form = layui.form;
@@ -27,6 +34,15 @@ layui.use('form', function(){
 	var email  = document.getElementById('myname').innerText
         var req = new XMLHttpRequest();
 	var loadlast = 0
+	if(!validateStrAndNo(thenew)){
+	layer.confirm('密码只能包含字母和数字', function(index){
+        layer.close(index);
+	location.reload();
+     		 },function(index){
+        layer.close(index);
+	location.reload();
+     		 })
+	}else{
 	if(thenew != renew){
 	layer.confirm('两次输入的密码不一致', function(index){
         layer.close(index);
@@ -57,7 +73,7 @@ layui.use('form', function(){
 	else{
 	self.location.href='../index.html';}
      		 })
-	}
+	}}
 	return false
   });
 });

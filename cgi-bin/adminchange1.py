@@ -17,7 +17,7 @@ oldname = form.getvalue('oldname')
 #更新WORKER表中的用户名和密码数据，将BUSINESS和WORK中的姓名替换成新编辑的姓名
 db   = sqlite3.connect('../database/kbt.db')
 cu   = db.cursor()
-cu.execute('update WORKER set NAME = "%s",PASSWORD = "%s" where  EMAIL= "%s"'%(name,password,email))
+cu.execute('update WORKER set EMAIL="%s",NAME = "%s",PASSWORD = "%s" where  EMAIL= "%s"'%(email,name,password,email))
 cu.execute('update BUSINESS set BUSINESSWORKER =replace(BUSINESSWORKER,"%s","%s")'%(oldname,name))
 cu.execute('update BUSINESS set BUSINESSMANAGER =replace(BUSINESSMANAGER,"%s","%s")'%(oldname,name))
 cu.execute('update WORK set PROJECTWORKER =replace(PROJECTWORKER,"%s","%s")'%(oldname,name))

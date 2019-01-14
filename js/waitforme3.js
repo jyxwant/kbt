@@ -125,7 +125,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       layer.confirm('拒绝此工时提交', function(index){
       //obj.del();这里是操作
       var req = new XMLHttpRequest();
-      req.open("GET","./rejectmydata.py?businesscode="+data.businesscode+"&businessman="+data.businessman+"&username="+username+"&mondaytime="+mondaytime,false);
+      req.open("GET","./rejectmydata.py?businesscode="+data.businesscode+"&businessman="+data.businessman+"&username="+username+"&mondaytime="+mondaytime+"&businessname="+data.businessname,false);
       req.send(null);
       layer.close(index);
       location.reload();

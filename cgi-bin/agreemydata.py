@@ -45,7 +45,7 @@ for key in emailresult:
     my_user= str(key[0]) #收件人邮箱账号，为了后面易于维护，所以写成了变量
     break
 
-cu.execute('INSERT INTO EMAIL VALUES ("%s","%s","%s","%s","%s","3");'%(username,businessman,my_user,businesscode,mondaytime))
+cu.execute('INSERT INTO EMAIL VALUES ("%s","%s","%s","%s","%s","3","%s");'%(username,businessman,my_user,businesscode,mondaytime,businessname))
 cu.execute('update WORK set JUDGE="审批通过" where PROJECTWORKER="%s" and MONDAYTIME="%s" and PROJECTMANAGER="%s" and PROJECTID="%s" '%(businessman,mondaytime,username,businesscode))
 db.commit()
 cu.execute('select * FROM BUSINESS where BUSINESSCODE="%s" and BUSINESSWORKER="%s"'%(businesscode,businessman))

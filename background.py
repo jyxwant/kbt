@@ -17,7 +17,7 @@ sys.setdefaultencoding('utf8')
 
 while(True):
 	now = datetime.datetime.now()
-	if now.weekday() == 5:
+	if now.weekday() == 0:
 		monday = now - timedelta(days=now.weekday())
 		lastmonday = now - timedelta(days=now.weekday() + 7)
 		monday = str(monday.year) + '-' + str(monday.month).zfill(2) + '-' + str(monday.day).zfill(2)
@@ -66,7 +66,7 @@ while(True):
 				k7 = newkey[6]
 				k8 = newkey[13]
 				k9 = newkey[14]
-				cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","%s","0","0","0","0","0","未审批","%s","%s","%s","此用户没有填写工时说明")'\
+				cu.execute('INSERT INTO WORK VALUES("%s","%s","%s","%s","%s","%s","%s","0","0","0","0","0","未提交","%s","%s","%s","此用户没有填写工时说明")'\
 					%(k1,k2,k3,k4,k5,k6,k7,k8,k9,monday))
 		db.commit()
 		db.close()

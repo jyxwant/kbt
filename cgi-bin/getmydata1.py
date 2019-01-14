@@ -15,7 +15,7 @@ mondaytime  = form.getvalue('mondaytime')
 
 db   = sqlite3.connect('../database/kbt.db')
 cu   = db.cursor()
-cu.execute('select * from WORK where PROJECTMANAGER="%s" and MONDAYTIME="%s" and JUDGE != "none"'%(username,mondaytime))
+cu.execute('select * from WORK where PROJECTMANAGER="%s" and MONDAYTIME="%s" and JUDGE != "none" and JUDGE != "未提交"'%(username,mondaytime))
 result = cu.fetchall()
 
 

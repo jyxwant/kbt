@@ -189,14 +189,6 @@ setTimeout("if(ifreload==1){location.reload();}",2000)
         area: ['1000px', '500px']
     })
     form.on('submit(childsubmit)', function() {
-      var newemailname = $('#emailname').val()
-      var newpassword = $('#password').val()
-      var newname = $('#Name').val()
-             obj.update({
-                    emailname:newemailname,
-                    password:newpassword,
-                    Name:newname
-                });
         layer.close(index);
         return false
   }) 

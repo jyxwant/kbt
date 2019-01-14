@@ -63,7 +63,7 @@ def mail1():
 	ret=True
 	print "mail1"
 	try:
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
+		msg=MIMEText("coboter您好：距离项目"+thebusiness+"-"+businessname+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
 		msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
 		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
 		msg['Subject']=u"项目进度提醒".encode('utf-8') #邮件的主题，也可以说是标题
@@ -85,7 +85,7 @@ def mail2():
 	print "mail1"
 	try:
 		my_user = "liaoshenghua@cobotsys.com"   #####!!!!!!!!改这里
-		msg=MIMEText("廖总您好：距离项目"+thebusiness+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
+		msg=MIMEText("廖总您好：距离项目"+thebusiness+"-"+businessname+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
 		msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
 		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
 		msg['Subject']=u"项目进度提醒".encode('utf-8') #邮件的主题，也可以说是标题
@@ -104,7 +104,7 @@ def mail3():
 	print "mail1"
 	try:######  ########
 		my_user = ""   #####!!!!!!!!改这里
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
+		msg=MIMEText("coboter您好：距离项目"+thebusiness+"-"+businessname+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
 		msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
 		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
 		msg['Subject']=u"项目进度提醒".encode('utf-8') #邮件的主题，也可以说是标题
@@ -124,7 +124,7 @@ def mail4():
 	print "mail1"
 	try:
 		my_user = ""   #####!!!!!!!!改这里
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
+		msg=MIMEText("coboter您好：距离项目"+thebusiness+"-"+businessname+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
 		msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
 		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
 		msg['Subject']=u"项目进度提醒".encode('utf-8') #邮件的主题，也可以说是标题
@@ -144,7 +144,7 @@ def mail5():
 	print "mail1"
 	try:
 		my_user = ""   #####!!!!!!!!改这里
-		msg=MIMEText("coboter您好：距离项目"+thebusiness+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
+		msg=MIMEText("coboter您好：距离项目"+thebusiness+"-"+businessname+"截止还有"+str(days)+"天,但是工时尚未满足要求",'plain','utf-8')
 		msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
 		msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
 		msg['Subject']=u"项目进度提醒".encode('utf-8') #邮件的主题，也可以说是标题
@@ -187,6 +187,7 @@ while(True):
 			for key1 in newresult:
 				my_user = str(key1[0])
 				thebusiness = str(key[0])
+				businessname = str(key[1])
 				print thebusiness
 				print my_user
 				ret = mail1()
@@ -195,15 +196,6 @@ while(True):
 				#ret = mail4()
 				#ret = mail5()
 				break
-	if now.weekday() == 2:
-		cu.execute('select * from WORKER')
-		result = cu.fetchall()
-		for key in result:
-			my_user = str(key[0])
-			time.sleep(20)
-			ret = mail()
-			print my_user
-			print ret
 	if now.weekday() == 4:
 		cu.execute('select * from WORKER')
 		result = cu.fetchall()
