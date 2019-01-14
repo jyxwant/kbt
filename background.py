@@ -17,7 +17,7 @@ sys.setdefaultencoding('utf8')
 
 while(True):
 	now = datetime.datetime.now()
-	if now.weekday() == 0:
+	if now.weekday() == 4:
 		monday = now - timedelta(days=now.weekday())
 		lastmonday = now - timedelta(days=now.weekday() + 7)
 		monday = str(monday.year) + '-' + str(monday.month).zfill(2) + '-' + str(monday.day).zfill(2)
