@@ -41,7 +41,7 @@ else:
 	print "</head>"
 	print "<body>"
 	print "<div>"
-	print "<form method='post' action='kbt1.py' style='display:none;'>"
+	print "<form method='post' action='kbt2.py' style='display:none;'>"
 	print "<input name='username' value=%s >"%(site_name)
 	print "<input name='pwd' type='password' value=%s  >"%(site_url)
 	print "<input type='submit' value='点这里登录' name = 'submit' id='middle' >"

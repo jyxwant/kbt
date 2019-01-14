@@ -70,9 +70,10 @@ else{
 			var businessmanager = mydata[i].businessmanager
 			var remark = mydata[i].remark
 			var businessname = mydata[i].businessname
+			var judge = mydata[i].Judge
 			var req = new XMLHttpRequest();
         req.open("GET","./gongshicommit.py?businesscode="+businesscode+"&mondaytime="+mondaytime
-+"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager+"&remark="+remark+"&businessname="+businessname,false);
++"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager+"&remark="+remark+"&businessname="+businessname+"&judge="+judge,false);
         req.send(null);
         res = req.responseText;
 	console.log(res)	

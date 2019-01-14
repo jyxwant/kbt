@@ -67,7 +67,7 @@ if username != []:
   print "  <link rel='stylesheet' href='../css/mycss.css'>"
   print "</head>"
   print "<body class='layui-layout-body' style='overflow-y:scroll;'>"
-  print "<form method='post' action='waitforme1.py' style='display:none;'>"
+  print "<form method='post' action='waitforme2.py' style='display:none;'>"
   print "<input name='username' value=%s class='ur' />"%(site_email)
   print "<input name='pwd' value=%s class='pw' />"%(site_password)
   print "<input name='thisname' value=%s class='pw' />"%(thisname)

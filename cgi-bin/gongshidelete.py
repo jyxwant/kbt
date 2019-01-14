@@ -24,7 +24,7 @@ for key in emailresult:
     my_sender=str('cobotsys2019@163.com') #发件人邮箱账号，为了后面易于维护，所以写成了变量
     my_user= str(key[0]) #收件人邮箱账号，为了后面易于维护，所以写成了变量
     break
-cu.execute('INSERT INTO EMAIL VALUES ("%s","%s","%s","%s","%s","2","%s");'%(username,businessmanager,my_user,businesscode,mondaytime,businessname))
+cu.execute('INSERT INTO EMAIL VALUES ("%s","%s","%s","%s","%s","2","%s","none");'%(username,businessmanager,my_user,businesscode,mondaytime,businessname))
 
 cu.execute('DELETE FROM WORK WHERE PROJECTID = "%s" and PROJECTWORKER = "%s" and MONDAYTIME = "%s";'%(businesscode,username,mondaytime))
 db.commit()

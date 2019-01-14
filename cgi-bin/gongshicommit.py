@@ -21,7 +21,7 @@ businessmanager = form.getvalue('businessmanager')
 remark = form.getvalue('remark')
 db   = sqlite3.connect('../database/kbt.db')
 cu   = db.cursor()
-judge="未审批"
+judge=form.getvalue('judge')
 businessname = form.getvalue('businessname')
 
 
@@ -35,9 +35,12 @@ cu.execute('select * from EMAIL where SENDNAME= "%s" and RECEIVENAME = "%s" and 
                 %(username,businessmanager,my_user,businesscode,mondaytime))
 result = cu.fetchall()
 if result==[]:
-    cu.execute('INSERT INTO EMAIL VALUES ("%s","%s","%s","%s","%s","1","%s");'%(username,businessmanager,my_user,businesscode,mondaytime,businessname))
+    cu.execute('INSERT INTO EMAIL VALUES ("%s","%s","%s","%s","%s","1","%s","none");'%(username,businessmanager,my_user,businesscode,mondaytime,businessname))
 
-cu.execute('update WORK set MONDAY = "%s", TUESDAY="%s", WEDNESDAY="%s",THURSDAY="%s",FRIDAY="%s",JUDGE="%s",REMARK="%s" where PROJECTID="%s" and PROJECTWORKER="%s" and MONDAYTIME="%s"'%(monday,tuesday,wednesday,thursday,friday,judge,remark,businesscode,username,mondaytime))
+if judge == "未提交":
+	cu.execute('update WORK set MONDAY = "%s", TUESDAY="%s", WEDNESDAY="%s",THURSDAY="%s",FRIDAY="%s",JUDGE="未审批",REMARK="%s" where PROJECTID="%s" and PROJECTWORKER="%s" and MONDAYTIME="%s" and JUDGE="未提交"'%(monday,tuesday,wednesday,thursday,friday,remark,businesscode,username,mondaytime))
+else:
+	cu.execute('update WORK set MONDAY = "%s", TUESDAY="%s", WEDNESDAY="%s",THURSDAY="%s",FRIDAY="%s",REMARK="%s" where PROJECTID="%s" and PROJECTWORKER="%s" and MONDAYTIME="%s"'%(monday,tuesday,wednesday,thursday,friday,remark,businesscode,username,mondaytime))
 db.commit()
 db.close()
 
@@ -48,4 +51,4 @@ db.close()
 
 print("Content-type: text/html\n")
 
-print(emailresult)
+print(judge)

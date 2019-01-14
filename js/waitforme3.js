@@ -1,6 +1,24 @@
 $(window).resize(function () {
 location.reload();
 })
+
+
+function agree(){
+var req = new XMLHttpRequest();
+agreeremark = document.getElementById('agreeremark').value
+req.open("GET","./agreemydata.py?businesscode="+agreedata.businesscode+"&businessman="+agreedata.businessman+"&username="+username+"&mondaytime="+mondaytime+"&total="+total+"&businessname="+agreedata.businessname+"&nonedone="+nonedone+"&workertime="+workertime+"&starttime="+starttime+"&endtime="+endtime+"&should="+should+"&status="+status+"&remark="+agreeremark,false);
+      req.send(null);
+      
+      location.reload();
+
+}
+function reject(){
+var req = new XMLHttpRequest();
+rejectremark = document.getElementById('rejectremark').value
+      req.open("GET","./rejectmydata.py?businesscode="+rejectdata.businesscode+"&businessman="+rejectdata.businessman+"&username="+username+"&mondaytime="+mondaytime+"&businessname="+rejectdata.businessname+"&remark="+rejectremark,false);
+      req.send(null);
+	location.reload();
+}
 var mydata //= [{"businesscode":"CGFras","businessname":"xx","ratio":"100/200","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"审批通过"},{"businesscode":"C1","businessname":"xx","ratio":"100/200","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"审批拒绝"},{"businesscode":"C2","businessname":"xx","ratio":"50/100","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"审批通过"},{"businesscode":"C3","businessname":"xx","ratio":"60/200","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"未审批"},{"businesscode":"C4","businessname":"xx","ratio":"100/200","businessman":"Zhangsan","Monday":2,"Tuesday":4,"Wednesday":6,"Thursday":8,"Friday":8,"Judge":"未审批"}];
 
 var mydata
@@ -122,40 +140,93 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 
     };
     if(obj.event === 'del'){ 
-      layer.confirm('拒绝此工时提交', function(index){
+      var index = layui.layer.open({
+        title : "拒绝此工时提交",
+        type : 1,
+        content : 
+'<div class="layui-row" id="test1">'
++  '<div class="layui-form-item layui-form-text">'
++    '<label class="layui-form-label">请填写</label>'
++ '<form class="layui-form" id="addEmployeeForm">'
++    '<div class="layui-input-block layui-col-md10">'
++      '<textarea name="desc"  class="layui-textarea" id="rejectremark">'+'拒绝'+'</textarea>'
++    '</div>'
++                '<div class="layui-form-item">'
++                   '<div class="layui-input-block">'
++                      '<button id = "editchild" class="layui-btn layui-btn-submit "  onclick="reject()" lay-submit="" lay-filter="childsubmit">拒绝</button>'
++               '</div>'
++           '</div>'
++      '</form>'
++ ' </div>'
++ ' </div>'
+        ,//弹出层页面
+        area: ['800px', '300px']
+    })
+    form.on('submit(childsubmit)', function() {
+
+	//changeremark()
+        layer.close(index);
+	
+        return false
+  }) 
       //obj.del();这里是操作
-      var req = new XMLHttpRequest();
-      req.open("GET","./rejectmydata.py?businesscode="+data.businesscode+"&businessman="+data.businessman+"&username="+username+"&mondaytime="+mondaytime+"&businessname="+data.businessname,false);
-      req.send(null);
-      layer.close(index);
-      location.reload();
-      }) 
+      rejectdata= data
+      
+
+
     };
     if(obj.event === 'edit'){ 
-      layer.confirm('同意此工时提交', function(index){
+	var index = layui.layer.open({
+        title : "同意此工时提交",
+        type : 1,
+        content : 
+'<div class="layui-row" id="test1">'
++  '<div class="layui-form-item layui-form-text">'
++    '<label class="layui-form-label">请填写</label>'
++ '<form class="layui-form" id="addEmployeeForm">'
++    '<div class="layui-input-block layui-col-md10">'
++      '<textarea name="desc"  class="layui-textarea" id="agreeremark">'+'同意'+'</textarea>'
++    '</div>'
++                '<div class="layui-form-item">'
++                   '<div class="layui-input-block">'
++                      '<button id = "editchild" class="layui-btn layui-btn-submit "  onclick="agree()" lay-submit="" lay-filter="childsubmit">同意</button>'
++               '</div>'
++           '</div>'
++      '</form>'
++ ' </div>'
++ ' </div>'
+        ,//弹出层页面
+        area: ['800px', '300px']
+    })
+    form.on('submit(childsubmit)', function() {
+
+	//changeremark()
+        layer.close(index);
+	
+        return false
+  }) 
+      
       var req = new XMLHttpRequest();
       req.open("GET","./agreemydata1.py?businesscode="+data.businesscode+"&businessman="+data.businessman+"&username="+username+"&mondaytime="+mondaytime,false);
       req.send(null);
       res = req.responseText;
       res = res.replace(/\\\\/g,"\\")
       myjson = eval('(' + res + ')');
+      agreedata = data
+      nonedone = myjson[0].nonedone
       
-      var nonedone = myjson[0].nonedone
-      
-      var workertime = myjson[0].worktime
-      var starttime = myjson[0].starttime
-      var endtime = myjson[0].endtime
-      var should = myjson[0].should
-      var status = myjson[0].status
+      workertime = myjson[0].worktime
+      starttime = myjson[0].starttime
+      endtime = myjson[0].endtime
+      should = myjson[0].should
+      status = myjson[0].status
       console.log(myjson[0].starttime)
-      var total = parseInt(obj.data.Monday) + parseInt(obj.data.Tuesday) + parseInt(obj.data.Wednesday) + parseInt(obj.data.Thursday) + parseInt(obj.data.Friday) 
-      req.open("GET","./agreemydata.py?businesscode="+data.businesscode+"&businessman="+data.businessman+"&username="+username+"&mondaytime="+mondaytime+"&total="+total+"&businessname="+obj.data.businessname+"&nonedone="+nonedone+"&workertime="+workertime+"&starttime="+starttime+"&endtime="+endtime+"&should="+should+"&status="+status,false);
-      req.send(null);
-      layer.close(index);
-      location.reload();
-      }) 
+      total = parseInt(obj.data.Monday) + parseInt(obj.data.Tuesday) + parseInt(obj.data.Wednesday) + parseInt(obj.data.Thursday) + parseInt(obj.data.Friday) 
+      
+      
     };
   }) 
+
   $('#all').click(function () {
      var _window = $(window).height();
 	myheight = _window - 350

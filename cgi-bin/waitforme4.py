@@ -77,7 +77,7 @@ print "<div id = 'mondaytime' style='display:none;'>%s</div>"%(mondaytime)
 
 print "</form>"
 print "<body class='layui-layout-body' style='overflow-y:scroll;'>"
-print "<form method='post' action='kbt1.py' style='display:none;'>"
+print "<form method='post' action='kbt2.py' style='display:none;'>"
 print "<input name='username' value=%s class='ur' />"%(site_email)
 print "<input name='pwd' value=%s class='pw' />"%(site_password)
 print "<input type='submit' value='点这里登录' name = 'submit' class='bn' id = 'kbt' /></div>"

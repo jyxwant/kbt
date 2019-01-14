@@ -89,7 +89,7 @@ def mail3():
     ret=True
 
     try:
-        msg=MIMEText(str(username)+"同意了"+str(mondaytime)+"这一周的"+str(businesscode)+"-"+businessname+"项目的工时",'plain','utf-8')
+        msg=MIMEText(str(username)+"同意了"+str(mondaytime)+"这一周的"+str(businesscode)+"-"+businessname+"项目的工时"+"   备注："+remark,'plain','utf-8')
         msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
         msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject']=u"项目工时审批通过".encode('utf-8') #邮件的主题，也可以说是标题
@@ -107,7 +107,7 @@ def mail4():
     ret=True
 
     try:
-        msg=MIMEText(str(username)+"拒绝了"+str(mondaytime)+"这一周的"+str(businesscode)+"-"+businessname+"项目的工时",'plain','utf-8')
+        msg=MIMEText(str(username)+"拒绝了"+str(mondaytime)+"这一周的"+str(businesscode)+"-"+businessname+"项目的工时"+"   备注："+remark,'plain','utf-8')
         msg['From']=formataddr([u"库柏特项目工时管理系统".encode('utf-8'),my_sender])   #括号里的对应发件人邮箱昵称、发件人邮箱账号
         msg['To']=formataddr(["coboter",my_user])   #括号里的对应收件人邮箱昵称、收件人邮箱账号
         msg['Subject']=u"项目工时审批拒绝".encode('utf-8') #邮件的主题，也可以说是标题
@@ -164,6 +164,7 @@ while(True):
             my_user = key[2]
             businesscode = key[3]
             businessname = key[6]
+            remark = key[7]
             cu.execute('DELETE FROM EMAIL WHERE  SENDNAME= "%s" and RECEIVENAME = "%s" and SENDMAIL="%s" and BUSINESSCODE = "%s" and BEHAVE="3" and MONDAYTIME = "%s";'\
                 %(username,receivename,my_user,businesscode,mondaytime))
             my_user = str(my_user)
@@ -177,6 +178,7 @@ while(True):
             my_user = key[2]
             businesscode = key[3]
             businessname = key[6]
+            remark = key[7]
             cu.execute('DELETE FROM EMAIL WHERE  SENDNAME= "%s" and RECEIVENAME = "%s" and SENDMAIL="%s" and BUSINESSCODE = "%s" and BEHAVE="4" and MONDAYTIME = "%s";'\
                 %(username,receivename,my_user,businesscode,mondaytime))
             my_user = str(my_user)
