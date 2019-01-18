@@ -41,7 +41,7 @@ strarray[i] += theworker[i].mondaytime + '\t,'
       var link = document.createElement("a");
       link.href = uri;
       //对下载的文件命名
-      link.download =  "四周内未审批工时人员.csv";
+      link.download =  "两周内未审批工时人员.csv";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
@@ -77,7 +77,7 @@ function workergongshi(){
       var link = document.createElement("a");
       link.href = uri;
       //对下载的文件命名
-      link.download =  "四周内未提交工时人员.csv";
+      link.download =  "两周内未提交工时人员.csv";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
