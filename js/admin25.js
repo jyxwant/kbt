@@ -75,7 +75,7 @@ function addbusiness(){
 }
 
 function workercsv(){
-  let str = '用户名（邮箱）,姓名,挂靠项目,累计挂靠时间\n'
+  let str = '用户名（邮箱）,姓名,挂靠项目,挂靠项目名称,累计挂靠时间\n'
   var strarray = new Array()
   for(let i = 0; i < allname.length;i++ ){
 	strarray[i] = ''
@@ -84,6 +84,7 @@ function workercsv(){
 			strarray[i] += allname[i].email + '\t,'
 			strarray[i] += allname[i].name + '\t,'
 			strarray[i] += mydata[j].businesscode + '\t,'
+			strarray[i] += mydata[j].businessname + '\t,'
 			strarray[i] += mydata[j].workertime + '\t,'
 			strarray[i] += '\n';
 		}
@@ -111,7 +112,7 @@ function workercsv(){
 function businesscsv(){
 
       var jsonData = mydata
-      let str = '项目编码,项目名称,项目经理,项目状态,累计挂靠工时,项目工时挂靠人员,累计挂靠时间,是否已经超标,项目开始时间,项目结束时间,设定的工时上限\n';
+      let str = '项目编码,项目名称,项目经理,项目状态,累计挂靠工时,项目工时挂靠人员,此员工累计挂靠时间,是否已经超标,项目开始时间,项目结束时间,设定的工时上限\n';
       //增加\t为了不让表格显示科学计数法或者其他格式
       for(let i = 0 ; i < jsonData.length ; i++ ){
      
@@ -212,7 +213,7 @@ var index = layer.load(1);
       
 ,{field: 'now', title: '累计挂靠工时'}
 ,{field: 'businessworker', title: '项目工时挂靠人员'}
-,{field: 'workertime', title: '累计挂靠时间'}
+,{field: 'workertime', title: '此员工累计挂靠时间'}
 ,{field: 'beyond', title: '是否已经超标'}
 ,{field: 'start', title: '项目开始时间'}
 ,{field: 'end', title: '项目结束时间'}
