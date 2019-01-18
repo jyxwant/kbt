@@ -8,6 +8,81 @@ location.reload();
 })
 
 
+function managergongshi(){
+        var req = new XMLHttpRequest();
+        req.open("GET","./adminmanager.py",false);
+        req.send(null);
+        res = req.responseText;
+	res = res.replace(/\\\\/g,"\\")
+	console.log(res)
+	var json = eval('(' + res + ')');
+	var theworker = json
+	let str = '项目经理,项目人员,项目编码,项目名称,时间\n'
+  var strarray = new Array()
+  for(let i = 0; i < theworker.length;i++ ){
+	strarray[i] = ''
+	
+			strarray[i] += theworker[i].businessmanager + '\t,'
+			strarray[i] += theworker[i].businessworker + '\t,'
+strarray[i] += theworker[i].businesscode + '\t,'
+strarray[i] += theworker[i].businessname + '\t,'
+strarray[i] += theworker[i].mondaytime + '\t,'
+			strarray[i] += '\n';
+		
+		
+
+	}
+  for(let i = 0; i < strarray.length;i++){
+	str += strarray[i]
+}
+	      //encodeURIComponent解决中文乱码
+      let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
+      //通过创建a标签实现
+      var link = document.createElement("a");
+      link.href = uri;
+      //对下载的文件命名
+      link.download =  "四周内未审批工时人员.csv";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+}
+function workergongshi(){
+        var req = new XMLHttpRequest();
+        req.open("GET","./adminpeople.py",false);
+        req.send(null);
+        res = req.responseText;
+	res = res.replace(/\\\\/g,"\\")
+	console.log(res)
+	var json = eval('(' + res + ')');
+	var theworker = json
+	let str = '姓名,时间\n'
+  var strarray = new Array()
+  for(let i = 0; i < theworker.length;i++ ){
+	strarray[i] = ''
+	
+			strarray[i] += theworker[i].name + '\t,'
+			strarray[i] += theworker[i].mondaytime + '\t,'
+			strarray[i] += '\n';
+		
+		
+
+	}
+  for(let i = 0; i < strarray.length;i++){
+	str += strarray[i]
+}
+	      //encodeURIComponent解决中文乱码
+      let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
+      //通过创建a标签实现
+      var link = document.createElement("a");
+      link.href = uri;
+      //对下载的文件命名
+      link.download =  "四周内未提交工时人员.csv";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+}
 
 function change(){
 

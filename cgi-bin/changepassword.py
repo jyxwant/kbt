@@ -22,14 +22,14 @@ print "  <title>项目工时管理系统</title>"
 print "  <link rel='stylesheet' href='../layui/css/layui.css'>"
 print "</head>"
 print "<body class='layui-layout-body'>"
-print "<form method='post' action='waitforme1.py' style='display:none;'>"
+print "<form method='post' action='waitforme2.py' style='display:none;'>"
 print "<input name='username' value=%s class='ur' />"%(site_email)
 print "<input name='pwd' value=%s class='pw' />"%(site_password)
 print "<input name='thisname' value=%s class='pw' />"%(thisname)
 print "<input type='submit' value='点这里登录' name = 'submit' class='bn' id = 'waitforme' /></div>"
 print "</form>"
 print "<body class='layui-layout-body'>"
-print "<form method='post' action='kbt1.py' style='display:none;'>"
+print "<form method='post' action='kbt2.py' style='display:none;'>"
 print "<input name='username' value=%s class='ur' />"%(site_email)
 print "<input name='pwd' value=%s class='pw' />"%(site_password)
 print "<input type='submit' value='点这里登录' name = 'submit' class='bn' id = 'kbt' /></div>"
