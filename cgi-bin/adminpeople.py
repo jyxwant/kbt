@@ -49,10 +49,11 @@ for key in username:
 	thename = name.encode('raw_unicode_escape')
 	cu.execute('select * from WORK where PROJECTWORKER="%s" and (JUDGE="审批通过" or JUDGE="未审批") and MONDAYTIME="%s"'%(name,last_one_monday))
 	result = cu.fetchall()
-	"""
+
 	if result == []:
 		newname.append({"name":thename,"mondaytime":last_one_mondaytime})
 	cu.execute('select * from WORK where PROJECTWORKER="%s" and (JUDGE="审批通过" or JUDGE="未审批") and MONDAYTIME="%s"'%(name,last_two_monday))
+"""
 	result = cu.fetchall()
 	if result == []:
 		newname.append({"name":thename,"mondaytime":last_two_mondaytime})

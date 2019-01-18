@@ -13,9 +13,28 @@ if sys.getdefaultencoding() != 'utf-8':
 	sys.setdefaultencoding('utf-8')
 form = cgi.FieldStorage() 
 
+
+now = datetime.datetime.now()
+
+monday = now - timedelta(days=now.weekday())
+mondaytime = str(monday.year) + '-' + str(monday.month).zfill(2) + '-' + str(monday.day).zfill(2)
+
+
+last_one_monday = now - timedelta(days=(now.weekday() + 7))
+last_one_mondaytime = str(last_one_monday.year) + '-' + str(last_one_monday.month).zfill(2) + '-' + str(last_one_monday.day).zfill(2)
+last_two_monday = now - timedelta(days=(now.weekday() + 14))
+last_two_mondaytime = str(last_two_monday.year) + '-' + str(last_two_monday.month).zfill(2) + '-' + str(last_two_monday.day).zfill(2)
+
+last_three_monday = now - timedelta(days=(now.weekday() + 21))
+last_three_mondaytime = str(last_three_monday.year) + '-' + str(last_three_monday.month).zfill(2) + '-' + str(last_three_monday.day).zfill(2)
+
+last_four_monday = now - timedelta(days=(now.weekday() + 28))
+last_four_mondaytime = str(last_four_monday.year) + '-' + str(last_four_monday.month).zfill(2) + '-' + str(last_four_monday.day).zfill(2)
+
+
 db   = sqlite3.connect('../database/kbt.db')
 cu   = db.cursor()
-cu.execute('select PROJECTMANAGER,PROJECTWORKER,PROJECTID,PROJECTNAME,MONDAYTIME from WORK where JUDGE="未审批"')
+cu.execute('select PROJECTMANAGER,PROJECTWORKER,PROJECTID,PROJECTNAME,MONDAYTIME from WORK where JUDGE="未审批" and (MONDAYTIMe="%s" or MONDAYTIME="%s")'%(last_one_mondaytime,last_two_mondaytime))
 username = cu.fetchall()
 newname = []
 for key in username:
