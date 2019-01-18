@@ -63,7 +63,7 @@ result = cu.fetchall()
 if result != []:
     cu.execute('DELETE FROM BUSINESS where BUSINESSCODE="%s" and BUSINESSWORKER="none"'%(businesscode))
     db.commit()
-
+cu.execute('update BUSINESS set NOW="%s" where BUSINESSCODE="%s"'%(now1,businesscode))
 cu.execute('update WORK set RATIO = "%s" where PROJECTID="%s"'%(ratio,businesscode))
 db.commit()
 

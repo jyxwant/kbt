@@ -60,6 +60,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "</script>"
 	print "<script type='text/html' id='barDemo'>"
 	print "  <a class='layui-btn layui-btn-xs' lay-event='edit'>编辑</a>"
+	print "  <a class='layui-btn layui-btn-danger layui-btn-xs' lay-event='del'>删除</a>"
   
 	print "</script>"
 
