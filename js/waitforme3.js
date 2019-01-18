@@ -72,7 +72,7 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       ,{field: 'Wednesday', title: thiswednesday,width:"9%"}
       ,{field: 'Thursday', title: thisthursday,width:"9%"}
       ,{field: 'Friday', title: thisfriday,width:"9%"}
-      ,{field: 'ratio', title: '该项目总共累计挂靠工时/该项目计划工时',width:"18%"}
+      ,{field: 'ratio', title: '累计挂靠工时/项目计划工时',width:"18%"}
       ,{field: 'Judge', title: '审批状态'}
       ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
     ]]
