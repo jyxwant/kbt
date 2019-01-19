@@ -286,8 +286,6 @@ var index = layer.load(1);
       ,{field: 'status', title: '项目状态'}
       
 ,{field: 'now', title: '累计挂靠工时'}
-,{field: 'businessworker', title: '项目工时挂靠人员'}
-,{field: 'workertime', title: '此员工累计挂靠时间'}
 ,{field: 'beyond', title: '是否已经超标'}
 ,{field: 'start', title: '项目开始时间'}
 ,{field: 'end', title: '项目结束时间'}
