@@ -160,7 +160,7 @@ if username != []:
   print "        <button class='layui-btn' id='add' onclick='commitmydata()' style='background-color:red'>提交工时（请确认所填工时日期正确）</button>"
   print "      </div>"
   print "      <p>填表说明<p>"
-  print "      <p>1.注意：您在写完工时说明后必须提交工时才能提交到数据库<p>"
+  print "      <p>1.您在写完工时说明后必须提交工时才能提交到数据库<p>"
   print "      <p>2.如果数据没有出来，请刷新一下<p>"
   print "      <p>3.您的每天的总工时不能超过8小时<p>"
   print "      <p>4.如果您在周六或者周日工作，请与项目经理沟通后折算到周一到周五<p>"
