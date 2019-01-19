@@ -60,7 +60,6 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "</script>"
 	print "<script type='text/html' id='barDemo'>"
 	print "  <a class='layui-btn layui-btn-xs' lay-event='edit'>编辑</a>"
-	print "  <a class='layui-btn layui-btn-danger layui-btn-xs' lay-event='del'>删除</a>"
   
 	print "</script>"
 
@@ -91,7 +90,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "<script src='../jquery-3.2.1.js'></script>"
 
 
-	print "<script src ='../js/newadmin5.js'></script>"
+	print "<script src ='../js/newadmin6.js'></script>"
 	print "</body>"
 	print "</html>"
 

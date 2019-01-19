@@ -150,6 +150,7 @@ ifreload = 1
 });
 setTimeout("if(ifreload==1){location.reload();}",2000)
   table.on('tool(test)',function(obj)  {
+    if(obj.event === 'edit'){ 
 
     var index = layui.layer.open({
         title : "编辑用户",
@@ -194,7 +195,17 @@ setTimeout("if(ifreload==1){location.reload();}",2000)
   }) 
         
 
-    
+   }
+    if(obj.event === 'del'){ 
+        var email = obj.data.emailname
+	var name = obj.data.Name
+        var req = new XMLHttpRequest();
+        req.open("GET","./admindelete.py?email="+email+"&name="+name,false);
+        req.send(null);
+        res = req.responseText;
+
+
+} 
 
     }) 
 
