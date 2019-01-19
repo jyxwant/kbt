@@ -151,7 +151,7 @@ if username != []:
   print "      <div class='layui-row'>"
   print "        <button class='layui-btn' id='addRow'>添加我所参与的项目</button>"
   print "        <button class='layui-btn' id='delRow'>删除我所选中的项目</button>"
-  print "        <button class='layui-btn' id='add' onclick='commitmydata()' style='background-color:red'>提交工时，请确认所填时间正确</button>"
+  print "        <button class='layui-btn' id='add' onclick='commitmydata()' style='background-color:red'>提交工时（请确认所填工时日期正确）</button>"
   print "      </div>"
   print "      <p>填表说明<p>"
   print "      <p>1.注意：您在写完工时说明后必须提交工时才能提交到数据库<p>"
