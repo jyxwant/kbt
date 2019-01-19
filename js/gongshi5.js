@@ -177,13 +177,13 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
 			{type:'checkbox'},
       			{field: 'businesscode', title: '项目编码', totalRowText: '合计'}
 			,{field: 'businessname', title: '项目名称'}
-      			,{field: 'businessmanager', title: '项目经理'}
-      			,{field: 'Monday', title:thismonday, edit:'text', totalRow: true} 
-      			,{field: 'Tuesday', title: thistuesday, edit:'text', totalRow: true}
-      			,{field: 'Wednesday', title:thiswednesday , edit:'text', totalRow: true}
-      			,{field: 'Thursday', title:thisthursday ,edit:'text', totalRow: true}
-      			,{field: 'Friday', title:thisfriday ,edit:'text', totalRow: true}
-      			,{field: 'Judge', title: '审批状态'}
+      			,{field: 'businessmanager', title: '项目经理',width:"6%"}
+      			,{field: 'Monday', title:thismonday, edit:'text', totalRow: true,width:"6%"} 
+      			,{field: 'Tuesday', title: thistuesday, edit:'text', totalRow: true,width:"6%"}
+      			,{field: 'Wednesday', title:thiswednesday , edit:'text', totalRow: true,width:"6%"}
+      			,{field: 'Thursday', title:thisthursday ,edit:'text', totalRow: true,width:"6%"}
+      			,{field: 'Friday', title:thisfriday ,edit:'text', totalRow: true,width:"6%"}
+      			,{field: 'Judge', title: '审批状态',width:"6%"}
       			,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
     		]]
       		,totalRow: true
@@ -285,6 +285,7 @@ table.on('tool(test)',function(obj)  {
   }) 
     };
   }) 
+
  $('#delRow').click(function () {
 	layer.confirm('真的删除这些项目吗', function(index){
        

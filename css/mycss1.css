@@ -4,7 +4,9 @@
     padding: 0 15px;
     position: relative;
     overflow: hidden;
+    text-align:center;
     text-overflow: ellipsis;
     white-space: normal;
     box-sizing: border-box;
   }
+th .layui-table-cell {text-align:center;}

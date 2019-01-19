@@ -69,7 +69,7 @@ if username != []:
   print "    <meta http-equiv='content-language' content='zh-CN' />"
   print "  <title>项目工时管理系统</title>"
   print "  <link rel='stylesheet' href='../layui/css/layui.css'>"
-  print "  <link rel='stylesheet' href='../css/mycss.css'>"
+  print "  <link rel='stylesheet' href='../css/mycss1.css'>"
   print "</head>"
   print "<body class='layui-layout-body' style='overflow-y:scroll;'>"
   print "<form method='post' action='%s' style='display:none;'>"%(thekbt)
@@ -141,7 +141,13 @@ if username != []:
   print "    <div class='layui-row' style='padding:0px;'>"
   print "      <div class='layui-col-md12' style='margin-bottom:40px'>"
 
-  print "        <table id='demo' lay-filter='test'></table>"
+  print  "<div style='text-align: center;'>"
+  print  "  <div>"
+
+
+  print  "        <table id='demo' lay-filter='test'></table>"
+  print  "  </div>"
+  print  "</div>"
   print  "  <script type='text/html' id='barDemo'>"
   print  "      <a class='layui-btn layui-btn-primary layui-btn-xs' lay-event='detail'>工时说明</a>"
   print  "  </script>"
@@ -162,10 +168,7 @@ if username != []:
   print "    </div>"
   print "  </div>"
   
-  print "  <div>"
-  print "    <!-- 底部固定区域 -->"
   print "    © 武汉库柏特科技有限公司-项目工时管理系统"
-  print "  </div>"
   print "</div>"
   print "<body class='layui-layout-body'>"
 
@@ -212,7 +215,7 @@ if username != []:
   print "<script src='../DataTableExtend.js'></script>"
   print "<script src='../layui/layui.js ''></script>"
   print "<script src='../jquery-3.2.1.js'></script>"
-  print "<script src='../js/gongshi4.js'></script>"
+  print "<script src='../js/gongshi5.js'></script>"
   print "</body>"
   print "</html>"
 

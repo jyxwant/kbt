@@ -66,14 +66,14 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
     ,cols: [[ //表头
       {field: 'businesscode', title: '项目编码', totalRowText: '合计'}
       ,{field: 'businessname', title: '项目名称'}
-      ,{field: 'businessman', title: '项目工时填报人员'}
-      ,{field: 'Monday', title: thismonday,width:"9%"} 
-      ,{field: 'Tuesday', title: thistuesday,width:"9%"}
-      ,{field: 'Wednesday', title: thiswednesday,width:"9%"}
-      ,{field: 'Thursday', title: thisthursday,width:"9%"}
-      ,{field: 'Friday', title: thisfriday,width:"9%"}
-      ,{field: 'ratio', title: '该项目总共累计挂靠工时/该项目计划工时',width:"18%"}
-      ,{field: 'Judge', title: '审批状态'}
+      ,{field: 'businessman', title: '填报人员',width:"6%"}
+      ,{field: 'Monday', title: thismonday,width:"6%"} 
+      ,{field: 'Tuesday', title: thistuesday,width:"6%"}
+      ,{field: 'Wednesday', title: thiswednesday,width:"6%"}
+      ,{field: 'Thursday', title: thisthursday,width:"6%"}
+      ,{field: 'Friday', title: thisfriday,width:"6%"}
+      ,{field: 'ratio', title: '累计工时',width:"6%"}
+      ,{field: 'Judge', title: '审批状态',width:"6%"}
       ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
     ]]
     ,done: function (res, curr, count) {// 表格渲染完成之后的回调
@@ -227,6 +227,49 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
     };
   }) 
 
+ $('#newcsv').click(function () {
+
+
+var req = new XMLHttpRequest();
+        req.open("GET","./waitcsv.py?businessmanager="+username,false);
+        req.send(null);
+        res = req.responseText;
+	res = res.replace(/\\\\/g,"\\")
+	var newcsv = eval('(' + res + ')');
+      var jsonData = newcsv
+      let str = '项目编码,项目名称,项目经理,项目状态,累计挂靠工时,项目工时挂靠人员,此员工累计挂靠时间,是否已经超标,项目开始时间,项目结束时间,设定的工时上限\n';
+      //增加\t为了不让表格显示科学计数法或者其他格式
+      for(let i = 0 ; i < jsonData.length ; i++ ){
+     
+            str+=jsonData[i].businesscode + '\t,';
+str+=jsonData[i].businessname + '\t,';
+str+=jsonData[i].businessmanager + '\t,';
+str+=jsonData[i].status + '\t,';
+str+=jsonData[i].now + '\t,';
+str+=jsonData[i].businessworker + '\t,';
+str+=jsonData[i].workertime + '\t,';
+str+=jsonData[i].beyond + '\t,';
+str+=jsonData[i].start + '\t,';
+str+=jsonData[i].end + '\t,';
+str+=jsonData[i].should + '\t';
+	     
+
+        str+='\n';
+      }
+      //encodeURIComponent解决中文乱码
+      let uri = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str);
+      //通过创建a标签实现
+      var link = document.createElement("a");
+      link.href = uri;
+      //对下载的文件命名
+      link.download =  "我管理的项目的项目人员.csv";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+
+
+});
+
   $('#all').click(function () {
      var _window = $(window).height();
 	myheight = _window - 350
@@ -239,15 +282,15 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       ,cols: [[ //表头
       {field: 'businesscode', title: '项目编码', totalRowText: '合计'}
       ,{field: 'businessname', title: '项目名称'}
-      ,{field: 'businessman', title: '项目工时填报人员'}
+      ,{field: 'businessman', title: '填报人员',width:"6%"}
       
-      ,{field: 'Monday', title: thismonday,width:"9%"} 
-      ,{field: 'Tuesday', title: thistuesday,width:"9%"}
-      ,{field: 'Wednesday', title: thiswednesday,width:"9%"}
-      ,{field: 'Thursday', title: thisthursday,width:"9%"}
-      ,{field: 'Friday', title: thisfriday,width:"9%"}
-      ,{field: 'ratio', title: '累计挂靠工时/项目计划工时',width:"18%"}
-      ,{field: 'Judge', title: '审批状态'}
+      ,{field: 'Monday', title: thismonday,width:"6%"} 
+      ,{field: 'Tuesday', title: thistuesday,width:"6%"}
+      ,{field: 'Wednesday', title: thiswednesday,width:"6%"}
+      ,{field: 'Thursday', title: thisthursday,width:"6%"}
+      ,{field: 'Friday', title: thisfriday,width:"6%"}
+      ,{field: 'ratio', title: '累计工时',width:"6%"}
+      ,{field: 'Judge', title: '审批状态',width:"6%"}
       ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
       ]]
       })
@@ -265,15 +308,15 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       ,cols: [[ //表头
       {field: 'businesscode', title: '项目编码', totalRowText: '合计'}
       ,{field: 'businessname', title: '项目名称'}
-      ,{field: 'businessman', title: '项目工时填报人员'}
+      ,{field: 'businessman', title: '填报人员',width:"6%"}
 
-      ,{field: 'Monday', title: thismonday,width:"9%"} 
-      ,{field: 'Tuesday', title: thistuesday,width:"9%"}
-      ,{field: 'Wednesday', title: thiswednesday,width:"9%"}
-      ,{field: 'Thursday', title: thisthursday,width:"9%"}
-      ,{field: 'Friday', title: thisfriday,width:"9%"}
-      ,{field: 'ratio', title: '累计挂靠工时/项目计划工时',width:"18%"}
-      ,{field: 'Judge', title: '审批状态'}
+      ,{field: 'Monday', title: thismonday,width:"6%"} 
+      ,{field: 'Tuesday', title: thistuesday,width:"6%"}
+      ,{field: 'Wednesday', title: thiswednesday,width:"6%"}
+      ,{field: 'Thursday', title: thisthursday,width:"6%"}
+      ,{field: 'Friday', title: thisfriday,width:"6%"}
+      ,{field: 'ratio', title: '累计工时',width:"6%"}
+      ,{field: 'Judge', title: '审批状态',width:"6%"}
       ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
       ]]
       }
@@ -291,14 +334,14 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
       ,cols: [[ //表头
       {field: 'businesscode', title: '项目编码', totalRowText: '合计'}
       ,{field: 'businessname', title: '项目名称'}
-      ,{field: 'businessman', title: '项目工时填报人员'}
-      ,{field: 'Monday', title: thismonday,width:"9%"} 
-      ,{field: 'Tuesday', title: thistuesday,width:"9%"}
-      ,{field: 'Wednesday', title: thiswednesday,width:"9%"}
-      ,{field: 'Thursday', title: thisthursday,width:"9%"}
-      ,{field: 'Friday', title: thisfriday,width:"9%"}
-      ,{field: 'ratio', title: '累计挂靠工时/项目计划工时',width:"18%"}
-      ,{field: 'Judge', title: '审批状态'}
+      ,{field: 'businessman', title: '填报人员',width:"6%"}
+      ,{field: 'Monday', title: thismonday,width:"6%"} 
+      ,{field: 'Tuesday', title: thistuesday,width:"6%"}
+      ,{field: 'Wednesday', title: thiswednesday,width:"6%"}
+      ,{field: 'Thursday', title: thisthursday,width:"6%"}
+      ,{field: 'Friday', title: thisfriday,width:"6%"}
+      ,{field: 'ratio', title: '累计工时',width:"6%"}
+      ,{field: 'Judge', title: '审批状态',width:"6%"}
       ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
       ]]
       })
