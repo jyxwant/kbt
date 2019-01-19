@@ -280,18 +280,18 @@ str+=jsonData[i].should + '\t';
       ,page: false
       ,limit:30
       ,cols: [[ //表头
-      {field: 'businesscode', title: '项目编码', totalRowText: '合计'}
+      {field: 'businesscode', title: '项目编码', totalRowText: '合计',width:"14%"}
       ,{field: 'businessname', title: '项目名称'}
-      ,{field: 'businessman', title: '填报人员',width:"6%"}
+      ,{field: 'businessman', title: '人员',width:"6%"}
       
       ,{field: 'Monday', title: thismonday,width:"6%"} 
       ,{field: 'Tuesday', title: thistuesday,width:"6%"}
       ,{field: 'Wednesday', title: thiswednesday,width:"6%"}
       ,{field: 'Thursday', title: thisthursday,width:"6%"}
       ,{field: 'Friday', title: thisfriday,width:"6%"}
-      ,{field: 'ratio', title: '累计工时',width:"6%"}
-      ,{field: 'Judge', title: '审批状态',width:"6%"}
-      ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
+      ,{field: 'ratio', title: '累计工时',width:"8%"}
+      ,{field: 'Judge', title: '审批状态',width:"8%"}
+      ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"10%"}
       ]]
       })
   });
@@ -306,18 +306,18 @@ str+=jsonData[i].should + '\t';
       ,page: false
       ,limit:30
       ,cols: [[ //表头
-      {field: 'businesscode', title: '项目编码', totalRowText: '合计'}
+      {field: 'businesscode', title: '项目编码', totalRowText: '合计',width:"14%"}
       ,{field: 'businessname', title: '项目名称'}
-      ,{field: 'businessman', title: '填报人员',width:"6%"}
+      ,{field: 'businessman', title: '人员',width:"6%"}
 
       ,{field: 'Monday', title: thismonday,width:"6%"} 
       ,{field: 'Tuesday', title: thistuesday,width:"6%"}
       ,{field: 'Wednesday', title: thiswednesday,width:"6%"}
       ,{field: 'Thursday', title: thisthursday,width:"6%"}
       ,{field: 'Friday', title: thisfriday,width:"6%"}
-      ,{field: 'ratio', title: '累计工时',width:"6%"}
-      ,{field: 'Judge', title: '审批状态',width:"6%"}
-      ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
+      ,{field: 'ratio', title: '累计工时',width:"8%"}
+      ,{field: 'Judge', title: '审批状态',width:"8%"}
+      ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"10%"}
       ]]
       }
     )
@@ -332,17 +332,17 @@ str+=jsonData[i].should + '\t';
       ,page: false
       ,limit:30
       ,cols: [[ //表头
-      {field: 'businesscode', title: '项目编码', totalRowText: '合计'}
+      {field: 'businesscode', title: '项目编码', totalRowText: '合计',width:"14%"}
       ,{field: 'businessname', title: '项目名称'}
-      ,{field: 'businessman', title: '填报人员',width:"6%"}
+      ,{field: 'businessman', title: '人员',width:"6%"}
       ,{field: 'Monday', title: thismonday,width:"6%"} 
       ,{field: 'Tuesday', title: thistuesday,width:"6%"}
       ,{field: 'Wednesday', title: thiswednesday,width:"6%"}
       ,{field: 'Thursday', title: thisthursday,width:"6%"}
       ,{field: 'Friday', title: thisfriday,width:"6%"}
-      ,{field: 'ratio', title: '累计工时',width:"6%"}
-      ,{field: 'Judge', title: '审批状态',width:"6%"}
-      ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
+      ,{field: 'ratio', title: '累计工时',width:"8%"}
+      ,{field: 'Judge', title: '审批状态',width:"8%"}
+      ,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"10%"}
       ]]
       })
   });

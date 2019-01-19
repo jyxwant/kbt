@@ -192,7 +192,7 @@ print  "        <button class='layui-btn' id='unexamined'>未审批的工时</bu
 print  "        <button class='layui-btn' id='newcsv'>导出我的项目分析</button>"
 print  "      </div>"
 print  "      <p>审批说明<p>"
-print  "      <p>1.在您审批通过或拒绝后会有一段时间的延迟，请不要刷新，在发邮件</p>"
+print  "      <p>1.审批拒绝的工时请填写拒绝的理由；</p>"
 print  "	<p>2.如果数据没有加载出来，请尝试刷新页面<p>"
 print  "    </div>"
 print  "  </div>"

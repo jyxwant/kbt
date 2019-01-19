@@ -175,15 +175,15 @@ layui.use(['jquery', 'table', 'form','layer'], function(){
     		,limit:30
     		,cols: [[ //表头
 			{type:'checkbox'},
-      			{field: 'businesscode', title: '项目编码', totalRowText: '合计'}
+      			{field: 'businesscode', title: '项目编码', totalRowText: '合计',width:"14%"}
 			,{field: 'businessname', title: '项目名称'}
-      			,{field: 'businessmanager', title: '项目经理',width:"6%"}
+      			,{field: 'businessmanager', title: '项目经理',width:"8%"}
       			,{field: 'Monday', title:thismonday, edit:'text', totalRow: true,width:"6%"} 
       			,{field: 'Tuesday', title: thistuesday, edit:'text', totalRow: true,width:"6%"}
       			,{field: 'Wednesday', title:thiswednesday , edit:'text', totalRow: true,width:"6%"}
       			,{field: 'Thursday', title:thisthursday ,edit:'text', totalRow: true,width:"6%"}
       			,{field: 'Friday', title:thisfriday ,edit:'text', totalRow: true,width:"6%"}
-      			,{field: 'Judge', title: '审批状态',width:"6%"}
+      			,{field: 'Judge', title: '审批状态',width:"8%"}
       			,{fixed: 'right', width:178, align:'center', toolbar: '#barDemo',width:"8%"}
     		]]
       		,totalRow: true

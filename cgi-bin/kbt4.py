@@ -216,7 +216,7 @@ if username != []:
   print "<script src='../DataTableExtend.js'></script>"
   print "<script src='../layui/layui.js ''></script>"
   print "<script src='../jquery-3.2.1.js'></script>"
-  print "<script src='../js/gongshi5.js'></script>"
+  print "<script src='../js/gongshi6.js'></script>"
   print "</body>"
   print "</html>"
 
