@@ -2,13 +2,20 @@
 # -*- coding: UTF-8 -*-
 import cgi, cgitb 
 import sqlite3 
-
+import datetime
+from datetime import timedelta
 form = cgi.FieldStorage() 
 # 获取数据
 site_email = form.getvalue('username')
 site_password  = form.getvalue('pwd')
 thisname = form.getvalue('thisname')
-
+now = datetime.datetime.now()
+thekbt = "waitforme2.py"
+if now.weekday() >= 4:
+  thekbt = "waitforme1.py"
+thewait = "kbt2.py"
+if now.weekday() >= 4:
+  thewait = "kbt1.py"
 
 
 print "Content-type:text/html"
@@ -22,14 +29,14 @@ print "  <title>项目工时管理系统</title>"
 print "  <link rel='stylesheet' href='../layui/css/layui.css'>"
 print "</head>"
 print "<body class='layui-layout-body'>"
-print "<form method='post' action='waitforme2.py' style='display:none;'>"
+print "<form method='post' action='%s' style='display:none;'>"%(thekbt)
 print "<input name='username' value=%s class='ur' />"%(site_email)
 print "<input name='pwd' value=%s class='pw' />"%(site_password)
 print "<input name='thisname' value=%s class='pw' />"%(thisname)
 print "<input type='submit' value='点这里登录' name = 'submit' class='bn' id = 'waitforme' /></div>"
 print "</form>"
 print "<body class='layui-layout-body'>"
-print "<form method='post' action='kbt2.py' style='display:none;'>"
+print "<form method='post' action='%s' style='display:none;'>"%(thewait)
 print "<input name='username' value=%s class='ur' />"%(site_email)
 print "<input name='pwd' value=%s class='pw' />"%(site_password)
 print "<input type='submit' value='点这里登录' name = 'submit' class='bn' id = 'kbt' /></div>"

@@ -276,8 +276,7 @@ var index = layer.load(1);
     elem: '#demo'
     ,height: myheight
     ,data : mydata 
-    ,page: false
-    ,limit:3000
+    ,page: true
 
     ,cols: [[ //表头
 

@@ -52,7 +52,9 @@ last_four_monday = now - timedelta(days=(now.weekday() + 28))
 last_four_friday = now - timedelta(days=(now.weekday() + 24))
 last_four = '上四周' + '(' + str(last_four_monday.month).zfill(2) + '/' + str(last_four_monday.day).zfill(2) + '-' +  \
 str(last_four_friday.month).zfill(2) + '/' + str(last_four_friday.day).zfill(2) + ')'
-
+thekbt = "waitforme2.py"
+if now.weekday() >= 4:
+  thekbt = "waitforme1.py"
 
 
 #获取数据
@@ -70,7 +72,7 @@ if username != []:
   print "  <link rel='stylesheet' href='../css/mycss.css'>"
   print "</head>"
   print "<body class='layui-layout-body' style='overflow-y:scroll;'>"
-  print "<form method='post' action='waitforme2.py' style='display:none;'>"
+  print "<form method='post' action='%s' style='display:none;'>"%(thekbt)
   print "<input name='username' value=%s class='ur' />"%(site_email)
   print "<input name='pwd' value=%s class='pw' />"%(site_password)
   print "<input name='thisname' value=%s class='pw' />"%(thisname)
@@ -149,7 +151,7 @@ if username != []:
   print "      <div class='layui-row' >"
   print "        <button class='layui-btn' id='addRow'>添加我所参与的项目</button>"
   print "        <button class='layui-btn' id='delRow'>删除我所选中的项目</button>"
-  print "        <button class='layui-btn' id='add' onclick='commitmydata()'>提交工时</button>"
+  print "        <button class='layui-btn' id='add' onclick='commitmydata()' style='background-color:red'>提交工时，请确认所填时间正确</button>"
   print "      </div>"
   print "      <p>填表说明<p>"
   print "      <p>1.注意：您在写完工时说明后必须提交工时才能提交到数据库<p>"

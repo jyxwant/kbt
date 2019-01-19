@@ -46,7 +46,9 @@ last_four_monday = now - timedelta(days=(now.weekday() + 28))
 last_four_friday = now - timedelta(days=(now.weekday() + 24))
 last_four = '上四周' + '(' + str(last_four_monday.month).zfill(2) + '/' + str(last_four_monday.day).zfill(2) + '-' + \
 str(last_four_friday.month).zfill(2) + '/' + str(last_four_friday.day).zfill(2) + ')'
-
+thewait = "kbt2.py"
+if now.weekday() >= 4:
+  thewait = "kbt1.py"
 print "Content-type:text/html"
 print
 
@@ -77,7 +79,7 @@ print "<div id = 'mondaytime' style='display:none;'>%s</div>"%(mondaytime)
 
 print "</form>"
 print "<body class='layui-layout-body' style='overflow-y:scroll;'>"
-print "<form method='post' action='kbt2.py' style='display:none;'>"
+print "<form method='post' action='%s' style='display:none;'>"%(thewait)
 print "<input name='username' value=%s class='ur' />"%(site_email)
 print "<input name='pwd' value=%s class='pw' />"%(site_password)
 print "<input type='submit' value='点这里登录' name = 'submit' class='bn' id = 'kbt' /></div>"
