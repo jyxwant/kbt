@@ -11,10 +11,18 @@ function waitforme(){
 function kbt(){
 	document.getElementById("kbt").click();
 }
-
+/*
 function validateStrAndNo(str) {
 var reg = {letter:"^[A-Za-z]+$",num:"^([+-]?)\\d*\\.?\\d+$"};
 if((new RegExp(reg.letter)).test(str) || (new RegExp(reg.num)).test(str)) {
+return true;
+}else {
+return false;
+}
+}*/
+function validateStrAndNo(str) {
+var reg = {letter:"^[A-Za-z0-9]+$"};
+if((new RegExp(reg.letter)).test(str)) {
 return true;
 }else {
 return false;

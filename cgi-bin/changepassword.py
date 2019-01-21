@@ -116,7 +116,7 @@ print "<script src='../DataTableExtend.js'></script>"
 print "<script src='../layui/layui.js '></script>"
 print "<script src='../jquery-3.2.1.js'></script>"
 
-print "<script src='../js/changepassword.js'></script>"
+print "<script src='../js/changepassword1.js'></script>"
 
 
    
