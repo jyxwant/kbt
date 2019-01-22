@@ -56,7 +56,7 @@ else if ($('div[class="layui-table-total"] td[data-key="1-0-8"]')[0].innerText !
 else{
 	for(let n=0;n < mydata.length;n++){
 		thesum_key = 0
-		thesum_new = parseInt(mydata[0].Monday) + parseInt(mydata[0].Friday) + parseInt(mydata[0].Wednesday)+ parseInt(mydata[0].Thursday)+ parseInt(mydata[0].Tuesday)
+		thesum_new = parseInt(mydata[n].Monday) + parseInt(mydata[n].Friday) + parseInt(mydata[n].Wednesday)+ parseInt(mydata[n].Thursday)+ parseInt(mydata[n].Tuesday)
 		if(thesum_new == 0){
 			thesum_key=1
 			break	
