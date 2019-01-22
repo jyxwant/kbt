@@ -55,10 +55,15 @@ else if ($('div[class="layui-table-total"] td[data-key="1-0-8"]')[0].innerText !
 	}
 else{
 	for(let n=0;n < mydata.length;n++){
-		
+		thesum_key = 0
+		thesum_new = parseInt(mydata[0].Monday) + parseInt(mydata[0].Friday) + parseInt(mydata[0].Wednesday)+ parseInt(mydata[0].Thursday)+ parseInt(mydata[0].Tuesday)
+		if(thesum_new == 0){
+			thesum_key=1
+			break	
+					}
 	
 	}
-
+       if(thesum_key!=1){
 	for(let i=0;i < mydata.length;i++){
 		if(mydata[i].Judge == "未审批" ||   mydata[i].Judge == "未提交"){
 			var businesscode = mydata[i].businesscode
@@ -79,7 +84,11 @@ else{
 	console.log(res)	
 		}
 	
-	}
+	}}
+else{
+layer.confirm('不能提交周一到周五工时全为0的项目', function(index){layer.close(index); })
+
+}
 	location.reload();
 	}
 
