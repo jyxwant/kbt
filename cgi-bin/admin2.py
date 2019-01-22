@@ -88,7 +88,7 @@ if site_name == "admin" and site_url == "cobot#2018":
 	print "<script src='../jquery-3.2.1.js'></script>"
 
 
-	print "<script src = '../js/admin26.js'></script>"
+	print "<script src = '../js/admin27.js'></script>"
 	print "</body>"
 	print "</html>"
 
