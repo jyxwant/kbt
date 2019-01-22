@@ -154,13 +154,13 @@ function workercsv(){
   var strarray = new Array()
   for(let i = 0; i < allname.length;i++ ){
 	strarray[i] = ''
-	for(let j = 0; j < mydata.length;j++){
-		if(mydata[j].businessworker == allname[i].name){
+	for(let j = 0; j < newmydata.length;j++){
+		if(newmydata[j].businessworker == allname[i].name){
 			strarray[i] += allname[i].email + '\t,'
 			strarray[i] += allname[i].name + '\t,'
-			strarray[i] += mydata[j].businesscode + '\t,'
-			strarray[i] += mydata[j].businessname + '\t,'
-			strarray[i] += mydata[j].workertime + '\t,'
+			strarray[i] += newmydata[j].businesscode + '\t,'
+			strarray[i] += newmydata[j].businessname + '\t,'
+			strarray[i] += newmydata[j].workertime + '\t,'
 			strarray[i] += '\n';
 		}
 
@@ -186,7 +186,7 @@ function workercsv(){
 
 function businesscsv(){
 
-      var jsonData = mydata
+      var jsonData = newmydata
       let str = '项目编码,项目名称,项目经理,项目状态,累计挂靠工时,项目工时挂靠人员,此员工累计挂靠时间,是否已经超标,项目开始时间,项目结束时间,设定的工时上限\n';
       //增加\t为了不让表格显示科学计数法或者其他格式
       for(let i = 0 ; i < jsonData.length ; i++ ){
@@ -236,6 +236,12 @@ window.onload=function (){//页面加载时根据本周的起始时间传入数�
 	res = res.replace(/\\\\/g,"\\")
 	var json = eval('(' + res + ')');
 	mydata = json
+        req.open("GET","./admingetmydata2_1.py",false);
+        req.send(null);
+        res = req.responseText;
+	res = res.replace(/\\\\/g,"\\")
+	var json = eval('(' + res + ')');
+	newmydata = json
 	req.open("GET","./admingetmydata3.py",false);
         req.send(null);
         res = req.responseText;
