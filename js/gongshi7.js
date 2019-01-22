@@ -81,7 +81,8 @@ else{
 +"&username="+username+"&monday="+monday+"&tuesday="+tuesday+"&wednesday="+wednesday+"&thursday="+thursday+"&friday="+friday+"&businessmanager="+businessmanager+"&remark="+remark+"&businessname="+businessname+"&judge="+judge,false);
         req.send(null);
         res = req.responseText;
-	console.log(res)	
+	console.log(res)
+	location.reload();	
 		}
 	
 	}}
@@ -89,7 +90,7 @@ else{
 layer.confirm('不能提交周一到周五工时全为0的项目', function(index){layer.close(index); })
 
 }
-	location.reload();
+	
 	}
 
 
